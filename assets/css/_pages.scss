@@ -1,0 +1,201 @@
+/*
+Theme Name: Casalit by Orion
+Description: Diagramação das páginas
+*/
+
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+1.0 Title
+2.0 Content
+3.0 Text tags
+4.0 Content layout
+--------------------------------------------------------------*/
+
+:root {
+  --layout-margin: 64px;
+  --primary-color: #3A7DFF;
+  --default-text-color: rgba(0, 0, 0, 0.54);
+  --header-text-color: rgba(0, 0, 0, 0.70);
+  --title-text-color: rgba(0, 0, 0, 0.80);
+}
+
+/*--------------------------------------------------------------
+1.0 Title
+--------------------------------------------------------------*/
+
+.cl-page-title {
+  display: block;
+  margin: 32px 0 24px;
+  text-align: center;
+  width: 100%;
+}
+
+.cl-page-title > h2,
+%page-title {
+  color: var(--title-text-color);
+  display: inline-block;
+  font-size: 24px;
+  font-weight: 600;
+  letter-spacing: -0.93px;
+  user-select: none;
+}
+
+/*--------------------------------------------------------------
+2.0 Content
+--------------------------------------------------------------*/
+
+.cl-page-wrapper {
+  display: block;
+  margin: auto;
+  max-width: 700px;
+  width: 100%;
+}
+
+/*--------------------------------------------------------------
+3.0 Text tags
+--------------------------------------------------------------*/
+
+.cl-page-content p {
+  color: var(--default-text-color);
+  display: block;
+  font-size: 14px;
+  font-weight: normal;
+  margin-bottom: 16px;
+  line-height: 21px;
+  text-align: justify;
+}
+
+.cl-page-content h2,
+.cl-page-content h3,
+.cl-page-content h4 {
+  color: var(--header-text-color);
+  display: block;
+  font-weight: bold;
+  margin-bottom: 16px;
+  padding-top: 16px;
+}
+
+.cl-page-content h3 {
+  font-size: 20px;
+  letter-spacing: -0.78px;
+}
+
+.cl-page-content h4 {
+  font-size: 18px;
+  letter-spacing: -0.54px;
+}
+
+.cl-page-content li {
+  color: var(--default-text-color);
+  font-size: 14px;
+  line-height: 21px;
+}
+
+.cl-page-content li:not(:last-child) {
+  margin-bottom: 8px;
+}
+
+.cl-page-content ul {
+  display: block;
+  margin-left: 24px;
+  list-style-type: disc;
+}
+
+.cl-page-picture {
+  display: block;
+  margin-bottom: 24px;
+  width: 100%;
+
+  > img {
+    display: block;
+    width: 100%;
+  }
+}
+
+/*--------------------------------------------------------------
+4.0 Content layout
+--------------------------------------------------------------*/
+
+.product-card {
+  box-shadow: 0 0 0 1px rgba(black, 0.12);
+  display: block;
+  height: 100%;
+  transition: 200ms cubic-bezier(0.1, 0.9, 0.2, 1);
+  width: 100%;
+
+  > .content {
+    align-content: space-between;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 24px;
+
+    > .picture {
+      display: block;
+      margin-bottom: 24px;
+      width: 100%;
+
+      img {
+        display: block;
+        max-width: 100%;
+      }
+    }
+
+    > .data {
+      > h3 {
+        color: var(--default-text-color);
+        display: block;
+        font-size: 16px;
+        font-weight: 500;
+        transition: 100ms cubic-bezier(0.1, 0.9, 0.2, 1);
+        user-select: none;
+      }
+
+      > a {
+        align-items: center;
+        background-color: var(--primary-color);
+        color: white;
+        display: inline-flex;
+        font-size: 14px;
+        font-weight: bold;
+        flex-direction: row;
+        height: auto;
+        justify-content: space-between;
+        margin-top: 16px;
+        opacity: 0;
+        padding: 8px;
+        transition: 100ms cubic-bezier(0.1, 0.9, 0.2, 1);
+        width: auto;
+
+        .arrow {
+          display: block;
+          height: 12px;
+          margin: 0 8px 0 64px;
+          width: 22px;
+        }
+      }
+    }
+  }
+
+  &:hover {
+    box-shadow: 0 10px 19px rgba(black, 0.16);
+    transform: scale(1.1);
+
+    > .content {
+      > .data {
+        > h3 {
+          display: block;
+          @extend %page-title;
+          transform: scale(0.9);
+        }
+
+        > a {
+          opacity: 1;
+          transform: scale(0.9);
+        }
+      }
+    }
+  }
+}

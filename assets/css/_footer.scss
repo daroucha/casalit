@@ -1,0 +1,130 @@
+/*
+Theme Name: Casalit by Orion
+Description: Estilos do footer
+*/
+
+:root {
+  --layout-margin: 64px;
+  --primary-color: #3A7DFF;
+  --secondary-color: #194AA8;
+  --default-text-color: rgba(0, 0, 0, 0.54);
+}
+
+/* Contents */
+#cl-footer > .wrapper {
+  box-sizing: border-box;
+  align-items: center;
+  display: grid;
+  grid-row-gap: 12px;
+  grid-template-areas: 'brand address'
+                       'menu orion';
+  grid-template-columns: 1fr auto;
+  grid-template-rows: auto 64px;
+  height: 100%;
+  padding: 0px var(--layout-margin);
+  width: 100%;
+}
+
+#cl-footer .cl-logo {
+  align-self: flex-end;
+  display: block;
+  grid-area: brand;
+}
+
+#cl-footer .cl-logo .cl-site-title {
+  display: block;
+  height: 42px;
+  margin-bottom: 16px;
+  width: 114px;
+}
+
+#cl-footer .cl-logo .cl-site-title > a {
+  background-color: transparent;
+  // background-image: url('../assets/images/casalit-blue.svg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  color: transparent;
+  display: block;
+  height: 100%;
+  text-decoration: none;
+  user-select: none;
+  width: 100%;
+}
+
+#cl-footer .cl-logo .cl-site-desc {
+  color: var(--default-text-color);
+  font-size: 12px;
+  line-height: 15px;
+  user-select: none;
+}
+
+#cl-footer .cl-address {
+  align-self: flex-end;
+  color: var(--default-text-color);
+  display: block;
+  font-size: 12px;
+  grid-area: address;
+}
+
+#cl-footer .cl-address > p {
+  display: block;
+  text-align: right;
+  line-height: 18px;
+}
+
+#cl-footer .cl-footer-navigation {
+  display: inline-block;
+  grid-area: menu;
+}
+
+#cl-footer .cl-menu {
+  align-items: center;
+  display: flex;
+  flex-flow: row wrap;
+}
+
+#cl-footer .cl-menu li:not(:first-child) {
+  margin: 0 0 0 40px;
+}
+
+#cl-footer .cl-menu .menu-item > a {
+  box-shadow: 0 0 0 0 transparent;
+  color: var(--default-text-color);
+  transition: box-shadow linear 100ms;
+}
+
+#cl-footer .cl-menu .menu-item > a:hover {
+  box-shadow: 0 2px 0 0 var(--primary-color);
+  color: var(--primary-color);
+}
+
+#cl-footer .cl-menu .current-menu-item {
+  animation: scaleIn 400ms cubic-bezier(0.1, 0.9, 0.2, 1);
+}
+
+#cl-footer .cl-menu .current-menu-item > a {
+  color: var(--secondary-color);
+  font-weight: 600;
+}
+
+#oriondesign {
+  display: block;
+  grid-area: orion;
+  justify-self: end;
+  width: 168px;
+}
+
+#oriondesign > a {
+  background-color: transparent;
+  // background-image: url('../assets/images/oriondesign.svg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  color: transparent;
+  display: block;
+  font-size: 0px;
+  height: 20px;
+  user-select: none;
+  width: 100%;
+}

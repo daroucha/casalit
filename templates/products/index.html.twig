@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+
+{% block body %}
+<section class="cl-page-title">
+  <h2>{{ 'navigation.products'|trans }}</h2>
+</section>
+
+<section class="cl-page">
+  <div class="cl-products">
+    <product-card title="Telhas" path="{{ path('products') }}/telha" picture="{{ asset('build/images/telhas.png') }}"></product-card>
+
+    <product-card title="Peças complementares" path="{{ path('products') }}/peca" picture="{{ asset('build/images/pecas.png') }}"></product-card>
+  </div>
+</section>
+{% endblock %}

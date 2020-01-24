@@ -1,12 +1,125 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
-    </head>
-    <body>
-        {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
-    </body>
+  <head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Casalit - É Casalit? Tá em casa!{% endblock %}</title>
+    {% block stylesheets %}
+      <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+      {{ encore_entry_link_tags('css/app') }}
+    {% endblock %}
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  </head>
+
+  <body>
+    <div id="casalit">
+      <div id="canvas">
+        {# Header #}
+        <header id="cl-header">
+          <div class="wrapper">
+            <div class="cl-logo">
+              <h1 class="cl-site-title">
+                <a href="{{ path('home') }}" rel="home" alt="Casalit - Página inicial" title="Casalit">
+                  <casalit-logo />
+                </a>
+              </h1>
+
+              <h3 class="cl-site-desc">{{ 'slogan'|trans }}</h3>
+            </div>
+
+            <nav class="cl-header-navigation" role="navigation">
+              <vue-navigation>
+                <li class="menu-item {% if app.request.get('_route') == 'home' %}current-menu-item{% endif %}">
+                  <a href="{{ path('home') }}">{{ 'navigation.home'|trans }}</h3></a>
+                </li>
+
+                <li class="menu-item {% if app.request.get('_route') == 'company' %}current-menu-item{% endif %}">
+                  <a href="{{ path('company') }}">{% trans %}navigation.company{% endtrans %}</a>
+                </li>
+
+                <li class="menu-item {% if app.request.get('_route') == 'products' %}current-menu-item{% endif %}">
+                  <a href="{{ path('products') }}">{% trans %}navigation.products{% endtrans %}</a>
+                </li>
+
+                <li class="menu-item {% if app.request.get('_route') == 'locations' %}current-menu-item{% endif %}">
+                  <a href="{{ path('locations') }}">{% trans %}navigation.locations{% endtrans %}</a>
+                </li>
+
+                <li class="menu-item {% if app.request.get('_route') == 'contact' %}current-menu-item{% endif %}">
+                  <a href="{{ path('contact') }}">{% trans %}navigation.contact{% endtrans %}</a>
+                </li>
+              </vue-navigation>
+            </nav>
+            
+            <form action="#" method="get" accept-charset="utf-8" class="cl-search-form" role="search">
+              <input type="text" name="s" id="s" value="Pesquisar" placeholder="Pesquisar" />
+            </form>
+          </div>
+        </header>
+
+        {# Body #}
+        <div id="cl-body">
+          <div class="wrapper">
+            {% block body %}{% endblock %}
+          </div>
+        </div>
+
+        {# Footer #}
+        <footer id="cl-footer">
+          <div class="wrapper">
+            <div class="cl-logo">
+              <h1 class="cl-site-title">
+                <a href="{{ path('home') }}" rel="home" alt="Página inicial" title="Casalit">
+                  <casalit-logo color="blue" />
+                </a>
+              </h1>
+
+              <h3 class="cl-site-desc">
+                Casalite Indústria e Comércio de Materiais de Construção Ltda. {{ "now"|date('Y') }}. {{ 'rights'|trans }}.
+              </h3>
+            </div>
+
+            <div class="cl-address">
+              <p>Av. Mascarenhas de Morais, 521, Chácara Rio Petrópolis</p>
+              <p>Duque de Caxias - RJ, CEP 25230-030</p>
+              <p>Telefone: (21) 2677-5000 | Fax: (21) 2677-5011</p>
+              <p>E-mail: vendas@casalit.com.br</p>
+            </div>
+
+            <nav class="cl-footer-navigation" role="navigation">
+              <vue-navigation>
+                <li class="menu-item {% if app.request.get('_route') == 'home' %}current-menu-item{% endif %}">
+                  <a href="{{ path('home') }}">{{ 'navigation.home'|trans }}</h3></a>
+                </li>
+
+                <li class="menu-item {% if app.request.get('_route') == 'company' %}current-menu-item{% endif %}">
+                  <a href="{{ path('company') }}">{% trans %}navigation.company{% endtrans %}</a>
+                </li>
+
+                <li class="menu-item {% if app.request.get('_route') == 'products' %}current-menu-item{% endif %}">
+                  <a href="{{ path('products') }}">{% trans %}navigation.products{% endtrans %}</a>
+                </li>
+
+                <li class="menu-item {% if app.request.get('_route') == 'locations' %}current-menu-item{% endif %}">
+                  <a href="{{ path('locations') }}">{% trans %}navigation.locations{% endtrans %}</a>
+                </li>
+
+                <li class="menu-item {% if app.request.get('_route') == 'contact' %}current-menu-item{% endif %}">
+                  <a href="{{ path('contact') }}">{% trans %}navigation.contact{% endtrans %}</a>
+                </li>
+              </vue-navigation>
+            </nav>
+
+            <orion-logo />
+          </div>
+        </footer>
+        {# End #}
+      </div>
+    </div>
+
+    {% block endscripts %}
+      {{ encore_entry_script_tags('vue/app') }}
+    {% endblock endscripts %}
+  </body>
 </html>
