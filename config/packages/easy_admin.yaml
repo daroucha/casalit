@@ -1,0 +1,30 @@
+easy_admin:
+   entities:
+      Product:
+          class: App\Entity\Product
+          form:
+              fields:
+                  - { property: 'name', type: 'text' }
+                  - { property: 'description', type: 'text' }
+                  - { property: 'technical_data' }
+                  - { property: 'type' }
+                  - { property: 'imageFile', type: 'file' }
+          
+      ProductType:
+          class: App\Entity\ProductType
+          list:
+              fields:
+                  - { property: 'id', type: 'integer' }
+                  - { property: 'title', type: 'text' }
+                  - { property: 'image', type: 'text' }
+                  - { property: 'created_at' }
+                  - { property: 'updated_at' }
+                  - { property: 'products' }
+          form:
+              fields:
+                  - { property: 'title', type: 'text' }
+                  - { property: 'imageFile', type: 'file' }
+
+      User:
+          class: App\Entity\User
+          controller: App\Controller\UserAdminController

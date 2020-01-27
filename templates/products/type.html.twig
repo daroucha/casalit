@@ -3,6 +3,18 @@
 
 {% block body %}
 <section class="cl-page-title">
-  <h2>{{ type|trans }}</h2>
+  <h2>{{ title }}</h2>
+</section>
+
+<section class="cl-page">
+  <div class="cl-products">
+    {% for product in products %}
+      <product-card 
+        title="{{ product.name }}" 
+        path="{{ path('product_page', {id: product.id}) }}" 
+        picture="{{ asset('images/') }}{{ product.picture }}"
+      ></product-card>
+    {% endfor %}
+  </div>
 </section>
 {% endblock %}

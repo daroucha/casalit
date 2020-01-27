@@ -8,9 +8,13 @@
 
 <section class="cl-page">
   <div class="cl-products">
-    <product-card title="Telhas" path="{{ path('products') }}/telha" picture="{{ asset('build/images/telhas.png') }}"></product-card>
-
-    <product-card title="Peças complementares" path="{{ path('products') }}/peca" picture="{{ asset('build/images/pecas.png') }}"></product-card>
+    {% for category in types %}
+      <product-card 
+        title="{{ category.title }}" 
+        path="{{ path('product_type', {id: category.id}) }}" 
+        picture="{{ asset('images/') }}{{ category.image }}"
+      ></product-card>
+    {% endfor %}
   </div>
 </section>
 {% endblock %}

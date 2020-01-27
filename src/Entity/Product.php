@@ -3,9 +3,12 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\HttpFoundation\File\File;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\ProductRepository")
+ * @Vich\Uploadable
  */
 class Product
 {
@@ -36,6 +39,12 @@ class Product
      * @ORM\Column(type="text", nullable=true)
      */
     private $picture;
+
+    /**
+     * @Vich\UploadableField(mapping="product", fileNameProperty="picture")
+     * @var File
+     */
+    public $imageFile;
 
     /**
      * @ORM\Column(type="text", nullable=true)
@@ -95,6 +104,19 @@ class Product
         return $this;
     }
 
+    public function setImageFile(File $image = null)
+    {
+        $this->imageFile = $image;
+
+        // VERY IMPORTANT:
+        // It is required that at least one field changes if you are using Doctrine,
+        // otherwise the event listeners won't be called and the file is lost
+        if ($image) {
+            // if 'updatedAt' is not defined in your entity, use another property
+            // $this->updated_at = new \DateTime('now');
+        }
+    }
+
     public function getTechnicalData(): ?string
     {
         return $this->technical_data;
@@ -105,5 +127,10 @@ class Product
         $this->technical_data = $technical_data;
 
         return $this;
+    }
+
+    public function __toString(): string
+    {
+        return $this->title;
     }
 }
