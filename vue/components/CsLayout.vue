@@ -1,11 +1,11 @@
 <template>
-  <ul class="cl-menu">
+  <div class="cs-component-layout">
     <slot />
-  </ul>
+  </div>
 </template>
 
 <script>
 export default {
-  name: 'VueNavigation'
+  name: 'CsLayout'
 }
 </script>

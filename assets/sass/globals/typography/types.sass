@@ -1,0 +1,9 @@
+/* Typography import
+  
+@each $weight, $styles in $font-weights 
+  @font-face 
+      font-family: $font-family
+      font-style: map-get($styles, 'font-style')
+      font-weight: map-get($styles, 'font-weight')
+      src: url('#{$font-path}/#{$weight}.otf') format('opentype')
+    

@@ -44,16 +44,25 @@ Encore
     .autoProvidejQuery()
     .enableVueLoader()
 
-    .addEntry('css/app', './assets/css/app.scss')
-    .addEntry('vue/app', './assets/vue/app.js')
+    .addEntry('app/style', './assets/sass/casalit.sass')
+    .addEntry('app', './vue/app.js')
 
     .addPlugin(new CopyWebpackPlugin([
       { from: './assets/fonts', to: 'fonts' },
       { from: './assets/images', to: 'images' },
       { from: './assets/vectors', to: 'vectors' },
-      { from: './assets/favicons', to: 'favicons' },
-      { from: './assets/webmanifest.json', to: 'webmanifest.json' }
+      // { from: './assets/favicons', to: 'favicons' },
+      // { from: './assets/webmanifest.json', to: 'webmanifest.json' }
     ]))
+
+    .addLoader({
+      test: /\.svg$/,
+      use: [
+        {
+          loader: 'vue-svg-loader'
+        }
+      ],
+    })
 ;
 
 module.exports = Encore.getWebpackConfig();
