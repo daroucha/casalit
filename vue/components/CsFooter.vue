@@ -1,92 +1,83 @@
 <template>
-  <header class="cs-component-header">
-    <div class="cs-header-i18n-bar">
-      <cs-layout use-margin></cs-layout>
-    </div>
-
-    <div class="cs-header-navigation-wrapper">
-      <div class="cs-header-brand-area">
+  <footer class="cs-component-footer">
+    <!-- <div class="cs-footer-navigation-wrapper">
+      <div class="cs-footer-brand-area">
         <svg xmlns="http://www.w3.org/2000/svg" width="142.857" height="40" viewBox="0 0 142.857 40">
           <path d="M61.512,36.547c.3.79.6,1.624.9,2.347,4.088,1.1,8.047,1.69,12.135.26a7.1,7.1,0,0,0,4.932-4.744c-.714-3.9-3.375-6.3-6.425-8.188-1.687,1.69-3.18,3.184-4.737,4.679.519.715,1.1,1.495,1.687,2.274-2.466,3.639-5.516.975-8.307.845-.065.91-.13,1.69-.195,2.4l-.065-.065a2.656,2.656,0,0,1-2.4,2.924,21.564,21.564,0,0,1-5.386.26,5.505,5.505,0,0,1-4.867-5.264c-.389-5.134-.13-10.267-.195-15.141.519-.39.714-.585.909-.585,6.749-.78,6.23.78,6.165,5.393-.065,3.639,0,7.278,0,10.657C57.336,36.858,59.516,36.306,61.512,36.547ZM9.654,23.948H1.412c-.909-3.314-.195-6.5.973-9.682C6.863,2.569,21.01-.16,30.42,5.3a10.824,10.824,0,0,1,4.348,4.679c2.142,4.419-.065,8.123-5,8.383-3.18.13-5.776-.91-7.268-3.769-.649-1.3-.649-2.859-1.038-4.549a6.075,6.075,0,0,0-5.321.78,12.688,12.688,0,0,0-6.49,10.917ZM119.846,39.414c-3.439.065-6.23-.195-8.631-1.755a7.791,7.791,0,0,1-3.634-7.148c.065-7.213,0-14.491,0-21.7V6.143c-1.038-1.819-2.791-1.3-4.413-1.884-.065-.975-.13-2.014-.195-3.054C105.634-.42,108.23-.225,110.89.75c2.6.91,3.245,1.884,3.245,4.874,0,7.473,0,14.946-.065,22.354v3.249c.065,2.924.714,3.769,3.634,4.354.519.13,1.038.195,1.882.325C119.651,37.01,119.716,37.984,119.846,39.414ZM143.857,35.9v3.184c-4.024,1.3-8.826-.26-10.773-3.639a7.5,7.5,0,0,1-.909-3.379c-.13-2.924-.065-5.848-.065-8.773V19.984c-1.428-.26-2.531-.455-3.7-.585-1.233-1.235-.844-2.534-.454-3.964,1.168-.195,2.206-.455,3.569-.715,0-1.17.065-2.4.065-3.7.065-2.534.779-3.249,3.31-3.249a20.445,20.445,0,0,1,3.05.455c.065,2.4.195,4.614.26,6.953,1.3.195,2.336.325,3.375.52,1.1,1.1,1.1,2.209.195,3.639-1.038.195-2.142.325-3.569.585-.065,1.3-.13,2.6-.13,3.834v7.473c0,3.119.779,3.964,3.764,4.484C142.494,35.775,143.014,35.84,143.857,35.9Zm-111.166-.26c.519,1.755-.195,2.4-1.168,2.729a13.176,13.176,0,0,1-3.7,1.04C20.816,40,14,39.414,8.1,35a16.283,16.283,0,0,1-6.425-9.227c2.79-.78,5.386-.26,8.242-.325C14.651,35.06,23.152,36.555,32.692,35.645Zm14.926-16.83a4.685,4.685,0,0,1,.195,1.495,5.12,5.12,0,0,1-.26,1.3c-.909.39-1.817.715-2.726,1.1-3.7,1.884-5.386,5.978-3.894,9.487A6.858,6.858,0,0,0,46,36.36c1.622.39,2.142,1.235,1.687,2.794-4.932,1.495-11.227-.91-13.693-5.264a8.969,8.969,0,0,1,1.3-10.527C38.532,19.854,42.621,18.62,47.618,18.815Zm46.27.065v2.794c-3.894,1.3-7.138,3.314-7.009,7.993.065,4.354,3.245,5.978,6.944,7.278v2.274a1.623,1.623,0,0,1-.714.325c-4.348.195-8.307-.715-11.486-4.029a8.989,8.989,0,0,1-.195-11.762C84.543,20.179,88.177,18.685,93.888,18.88ZM107.97,36.555c-.519.975-.714,1.819-1.168,2.144-2.336,1.755-7.528,1.3-9.669-.715a5.261,5.261,0,0,1-1.882-3.964c0-4.939,0-9.942.065-14.881,0-.195.195-.39.26-.52.065-.065.13-.195.26-.195,6.944-.455,5.97,0,6.035,5.393v8.123c0,3.249.779,4.094,4.153,4.484A8.109,8.109,0,0,1,107.97,36.555Zm11.811-17.87h6.425c.195,5.783-.065,11.372.13,16.57,1.493,1.819,3.31,1.69,4.867,1.884.584,1.365.195,2.209-.973,2.4A11.25,11.25,0,0,1,121.4,37.4a4.984,4.984,0,0,1-1.557-3.314C119.716,28.952,119.781,23.883,119.781,18.685ZM66.762,30.511A14.558,14.558,0,0,1,61.31,25.7c-1.882-3.054-1.1-5.848,2.077-7.473a11.983,11.983,0,0,1,3.375-1.04,20.688,20.688,0,0,1,10.838.975v4.484c-5.646-1.365-5.646-1.365-7.852.975.584.65,1.168,1.365,1.752,2.079C70.006,27.262,68.449,28.822,66.762,30.511Zm59.574-16.96a3.39,3.39,0,0,1-3.115,3.379,3.006,3.006,0,0,1-3.375-2.989,3.619,3.619,0,0,1,3.05-3.509A3.665,3.665,0,0,1,126.335,13.551Z" transform="translate(-1)" fill="#ff2020"/>
         </svg>
 
-        <span class="cs-header-brand-slogan" v-html="slogan" />
+        <span class="cs-footer-brand-slogan" v-html="slogan" />
       </div>
 
-      <nav class="cs-header-navigation-area">
-        <router-link class="cs-header-nav-link" :to="{name: 'Home'}">
-          <div class="cs-header-nav-link-contents">
-            <svg class="cs-header-nav-route-symbol" xmlns="http://www.w3.org/2000/svg" width="20.839" height="18" viewBox="0 0 20.839 18">
+      <nav class="cs-footer-navigation-area">
+        <router-link class="cs-footer-nav-link" :to="{name: 'Home'}">
+          <div class="cs-footer-nav-link-contents">
+            <svg class="cs-footer-nav-route-symbol" xmlns="http://www.w3.org/2000/svg" width="20.839" height="18" viewBox="0 0 20.839 18">
               <g transform="translate(-0.66 -1.32)"><path d="M11.08,1.32.66,10.991l.965,1.043.937-.871V19.32h7.1v-7.1H12.5v7.1h7.1V11.163l.937.871.965-1.043Zm0,1.93,7.1,6.6V17.9H13.919V10.8H8.241v7.1H3.982V9.849Z"/></g>
             </svg>
 
-            <span class="cs-header-nav-route-title">Página inicial</span>
+            <span class="cs-footer-nav-route-title">Página inicial</span>
           </div>
         </router-link>
 
-        <router-link class="cs-header-nav-link" :to="{name: 'Company'}">
-          <div class="cs-header-nav-link-contents">
-            <svg class="cs-header-nav-route-symbol stroke" xmlns="http://www.w3.org/2000/svg" width="28.595" height="19.003" viewBox="0 0 28.595 19.003">
+        <router-link class="cs-footer-nav-link" :to="{name: 'Company'}">
+          <div class="cs-footer-nav-link-contents">
+            <svg class="cs-footer-nav-route-symbol stroke" xmlns="http://www.w3.org/2000/svg" width="28.595" height="19.003" viewBox="0 0 28.595 19.003">
               <path d="M27.378,6.256,22.718,4.5,16.449,2.135c-.752-.284-1.5-.571-2.258-.848a1.8,1.8,0,0,0-.386-.064c-.309-.042-.617-.082-.925-.122l-.8-.1-.918-.12-.79-.1L9.451.651l-.8-.1L7.742.427l-.8-.1L6.133.217l-.79-.1L4.56.012A.111.111,0,0,1,4.531,0H4.492a.63.63,0,0,0-.053.069L.849,6.4.024,7.852A.344.344,0,0,1,0,7.886V7.9a.072.072,0,0,0,.07.042H2.042v8.051l10.71,2,.025,0,12.834-.819V6.233l.2.015.8.067.928.074A.337.337,0,0,1,27.6,6.4v-.07C27.523,6.3,27.45,6.283,27.378,6.256ZM12.587,17.547l-10.135-1.9V7.633L2.534,7.5,5.206,3.216Q5.836,2.207,6.465,1.2c.024-.039.042-.041.074-.024q3.023,1.646,6.046,3.286Zm.685-12.717c.277.151.553.309.833.448a.736.736,0,0,0,.273.05c.392.034.784.065,1.176.1l.962.075,1.132.093q.391.032.783.058l1.132.092c.254.021.509.04.763.058l1.156.094.753.058L23.4,6.05l.768.058,1.152.094h-.117V16.8L13,17.576V4.682Z" transform="translate(0.5 0.5)"/>
             </svg>
 
-            <span class="cs-header-nav-route-title">Empresa</span>
+            <span class="cs-footer-nav-route-title">Empresa</span>
           </div>
         </router-link>
 
-        <router-link class="cs-header-nav-link" :to="{name: 'Products'}">
-          <div class="cs-header-nav-link-contents">
-            <svg class="cs-header-nav-route-symbol" xmlns="http://www.w3.org/2000/svg" width="26.27" height="18" viewBox="0 0 26.27 18">
+        <router-link class="cs-footer-nav-link" :to="{name: 'Products'}">
+          <div class="cs-footer-nav-link-contents">
+            <svg class="cs-footer-nav-route-symbol" xmlns="http://www.w3.org/2000/svg" width="26.27" height="18" viewBox="0 0 26.27 18">
               <path d="M13.093,3.038a.821.821,0,0,0-.516.218L.263,14.687a.821.821,0,0,0,.558,1.424H3.284v4.925H4.926V16.111H21.344v4.925h1.642V16.111h2.463a.821.821,0,0,0,.558-1.424l-4.662-4.329V4.618H19.7V8.835l-6.009-5.58a.821.821,0,0,0-.6-.218Zm.042,1.94,10.223,9.492H2.912Z" transform="translate(0 -3.036)"/>
             </svg>
 
-            <span class="cs-header-nav-route-title">Produtos</span>
+            <span class="cs-footer-nav-route-title">Produtos</span>
           </div>
         </router-link>
 
-        <!-- <router-link class="cs-header-nav-link" :to="{name: 'Locations'}">
-          <div class="cs-header-nav-link-contents">
-            <svg class="cs-header-nav-route-symbol" xmlns="http://www.w3.org/2000/svg" width="13.05" height="18" viewBox="0 0 13.05 18">
+        <router-link class="cs-footer-nav-link" :to="{name: 'Locations'}">
+          <div class="cs-footer-nav-link-contents">
+            <svg class="cs-footer-nav-route-symbol" xmlns="http://www.w3.org/2000/svg" width="13.05" height="18" viewBox="0 0 13.05 18">
               <path d="M9.525,1A6.538,6.538,0,0,0,3,7.525a7.864,7.864,0,0,0,.984,3.283A30.394,30.394,0,0,0,6.048,14.32c1.489,2.238,2.972,4.058,2.972,4.058l.5.622.5-.622s1.483-1.82,2.977-4.058a31.1,31.1,0,0,0,2.059-3.512,7.864,7.864,0,0,0,.984-3.283A6.538,6.538,0,0,0,9.525,1Zm0,1.305a5.211,5.211,0,0,1,5.22,5.22,7.282,7.282,0,0,1-.851,2.712A31.184,31.184,0,0,1,11.921,13.6c-1.2,1.794-2.014,2.783-2.4,3.263-.382-.479-1.2-1.468-2.4-3.263a31.184,31.184,0,0,1-1.973-3.364,7.282,7.282,0,0,1-.851-2.712A5.211,5.211,0,0,1,9.525,2.305Zm0,3.915A1.305,1.305,0,1,0,10.83,7.525,1.308,1.308,0,0,0,9.525,6.22Z" transform="translate(-3 -1)" />
             </svg>
 
-            <span class="cs-header-nav-route-title">Onde encontrar</span>
+            <span class="cs-footer-nav-route-title">Onde encontrar</span>
           </div>
         </router-link>
 
-        <router-link class="cs-header-nav-link" :to="{name: 'Stores'}">
-          <div class="cs-header-nav-link-contents">
-            <svg class="cs-header-nav-route-symbol" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18">
+        <router-link class="cs-footer-nav-link" :to="{name: 'Stores'}">
+          <div class="cs-footer-nav-link-contents">
+            <svg class="cs-footer-nav-route-symbol" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18">
               <path d="M4.462,1A2.087,2.087,0,0,0,2.385,3.077V4.132L1,7.077v.154A2.081,2.081,0,0,0,2.385,9.178v7.745A2.087,2.087,0,0,0,4.462,19H15.538a2.087,2.087,0,0,0,2.077-2.077V9.178A2.081,2.081,0,0,0,19,7.231V7.077L17.615,4.132V3.077A2.087,2.087,0,0,0,15.538,1Zm0,1.385h.692V3.769H3.769V3.077A.683.683,0,0,1,4.462,2.385Zm2.077,0H7.923V3.769H6.538Zm2.769,0h6.231a.683.683,0,0,1,.692.692v.692H9.308ZM3.437,5.154H16.563l1,2.128a.668.668,0,0,1-.641.641.683.683,0,0,1-.692-.692V6.538H14.846v.692a.692.692,0,0,1-1.385,0V6.538H12.077v.692a.692.692,0,0,1-1.385,0V6.538H9.308v.692a.692.692,0,0,1-1.385,0V6.538H6.538v.692a.692.692,0,0,1-1.385,0V6.538H3.769v.692a.683.683,0,0,1-.692.692.668.668,0,0,1-.641-.641Zm1.025,3.61a2.035,2.035,0,0,0,2.769,0,2.035,2.035,0,0,0,2.769,0,2.035,2.035,0,0,0,2.769,0,2.035,2.035,0,0,0,2.769,0,2.075,2.075,0,0,0,.692.414v7.745a.683.683,0,0,1-.692.692H4.462a.683.683,0,0,1-.692-.692V9.181A2.116,2.116,0,0,0,4.462,8.764Z" transform="translate(-1 -1)" />
             </svg>
 
-            <span class="cs-header-nav-route-title">Revendas</span>
+            <span class="cs-footer-nav-route-title">Revendas</span>
           </div>
-        </router-link> -->
+        </router-link>
 
-        <router-link class="cs-header-nav-link" :to="{name: 'Contact'}">
-          <div class="cs-header-nav-link-contents">
-            <svg class="cs-header-nav-route-symbol" xmlns="http://www.w3.org/2000/svg" width="19.385" height="18" viewBox="0 0 19.385 18">
+        <router-link class="cs-footer-nav-link" :to="{name: 'Contact'}">
+          <div class="cs-footer-nav-link-contents">
+            <svg class="cs-footer-nav-route-symbol" xmlns="http://www.w3.org/2000/svg" width="19.385" height="18" viewBox="0 0 19.385 18">
               <g transform="translate(-1 -2)"><path d="M4.965,2A3.991,3.991,0,0,0,1,6V17.231h9.692V20h1.385V17.231h8.308V6A3.988,3.988,0,0,0,16.42,2Zm0,1.385h.379A2.583,2.583,0,0,1,7.923,6v9.849H2.385V5.992A2.589,2.589,0,0,1,4.965,3.385Zm3.348,0H16.42A2.587,2.587,0,0,1,19,6v9.849H9.308V6A3.974,3.974,0,0,0,8.313,3.385Zm2.38,2.769V7.538h5.538V8.923h1.385V6.154ZM3.769,7.538V8.923H6.538V7.538Z"/></g>
             </svg>
 
-            <span class="cs-header-nav-route-title">Fale conosco</span>
+            <span class="cs-footer-nav-route-title">Fale conosco</span>
           </div>
         </router-link>
       </nav>
-    </div>
-  </header>
+    </div> -->
+  </footer>
 </template>
 
 <script>
-import CsLayout from '../components/CsLayout';
-
 export default {
-  name: 'CsHeader',
-  components: {CsLayout},
+  name: 'CsFooter',
   props: {
-    useI18n: true,
-    useSearch: true,
     slogan: {
       default: "É Casalit? Tá em casa!"
     }

@@ -19,7 +19,7 @@ class AppController extends AbstractController
     }
 
     /**
-     * @Route("/{vueRouting}", name="index")
+     * @Route("/#/{vueRouting}", name="index")
      * @return Response
      */
     public function vueRouting(): Response

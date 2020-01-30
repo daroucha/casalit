@@ -1,0 +1,67 @@
+/* Pages layout
+
+.cs-page-home
+  .cs-page-carousel
+    align-items: center
+    display: flex
+    flex-direction: row
+    height: 68vh
+    justify-content: center
+    min-height: 500px
+    width: 100%
+
+    .VueCarousel
+      box-sizing: border-box
+      height: 100%
+      width: 100%
+
+      .VueCarousel-wrapper,
+      .VueCarousel-inner,
+      .VueCarousel-slide
+        height: 100% !important
+
+      .VueCarousel-navigation,
+      .VueCarousel-pagination
+        position: absolute
+
+      .VueCarousel-navigation
+        height: 100%
+        margin-left: $space-m
+        top: 0px
+        width: calc(100vw - #{$space-m} * 2)
+
+        .VueCarousel-navigation-button
+          align-items: center
+          backdrop-filter: blur(30px)
+          background-color: rgba($white, 0.60)
+          border-radius: 100%
+          box-sizing: content-box
+          display: flex
+          height: 12px
+          justify-content: center
+          margin: 0px !important
+          text-align: center
+          transform: translateY(0px)
+          width: 12px
+
+      .VueCarousel-pagination
+        bottom: 0px
+
+        .VueCarousel-dot-container
+          margin: 0px 0px 28px !important
+
+      .VueCarousel-slide
+        align-items: center
+        display: flex
+        flex-direction: column
+        justify-content: center
+
+      img,
+      .cs-carouse-content
+        background-position: center center
+        background-size: cover
+        background-repeat: no-repeat
+        display: block
+        height: auto
+        min-height: 100%
+        width: 100%

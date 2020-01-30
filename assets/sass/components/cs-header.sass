@@ -1,0 +1,109 @@
+/* Header component
+
+.cs-component-header
+  backdrop-filter: blur(30px)
+  background-color: rgba($white, 0.60)
+  box-shadow: 0 1px 0 0 $grey-0c
+  display: block
+  height: 151px
+  position: fixed
+  top: 0px
+  width: 100%
+  z-index: 90
+
+  .cs-header-i18n-bar
+    background-color: $grey-0a
+    display: block
+    height: 40px
+
+  .cs-header-navigation-wrapper
+    align-items: center
+    background-color: transparent
+    display: flex
+    flex-direction: row
+    height: calc(100% - 40px)
+    margin: 0px
+    margin-left: $space-m
+    margin-right: $space-m
+    width: calc(100% - #{$space-m} * 2)
+
+    .cs-header-brand-area
+      align-items: flex-start
+      display: flex
+      flex-direction: column
+      height: 100%
+      justify-content: center
+      width: 16vw
+
+      .cs-header-brand-slogan
+        @include type(14px, 400)
+        color: $grey-0y
+        margin-top: $space-8
+        user-select: none
+
+    .cs-header-navigation-area
+      align-items: center
+      display: flex
+      flex-direction: row
+      height: 100%
+      justify-content: flex-start
+      width: auto
+
+      .cs-header-nav-link
+        align-items: center
+        box-sizing: border-box
+        display: flex
+        flex-direction: column
+        height: 100%
+        justify-content: center
+        padding: $space-28
+        position: relative
+        text-decoration: none
+        user-select: none
+
+        .cs-header-nav-link-contents
+          align-items: center
+          display: flex
+          flex-direction: column
+          height: 100%
+          justify-content: center
+
+          .cs-header-nav-route-symbol
+            fill: $grey-0y
+            margin-bottom: $space-12
+            &.stroke
+              stroke: $grey-0y
+              stroke-width: 1px
+
+          .cs-header-nav-route-title
+            @include type(14px, 400)
+            color: $grey-0y
+        
+        // States
+        &:hover
+          background-color: $grey-0d
+
+        &.router-link-exact-active
+          background-color: rgba($blue-0x, 0.10)
+          &::after
+            background-color: $blue-0x
+            bottom: 0px
+            content: ''
+            display: block
+            height: 4px
+            left: 0px
+            position: absolute
+            transform: translateY(1px)
+            width: 100%
+          &:hover
+            background-color: rgba($blue-0x, 0.20)
+          .cs-header-nav-route-symbol
+            fill: $purple-0x
+            stroke: $purple-0x
+            stroke-width: 0.5px
+            &.stroke
+              stroke: $purple-0x
+              stroke-width: 1px
+          .cs-header-nav-route-title
+            @include type(14px, 600)
+            color: $purple-0x

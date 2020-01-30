@@ -3,25 +3,25 @@
 
 ## Instalação
 Abrir pasta de destino e clonar o respositório:
-> git clone https://daroucha@bitbucket.org/daroucha/casalit-symfony.git
+`git clone https://daroucha@bitbucket.org/daroucha/casalit-symfony.git`
 
 Instalar pacotes do Composer:
-> composer install
+`composer install`
 
 Instalar pacotes do Node:
-> npm i
+`npm i`
 
 Rodar o Webpack Encore:
-> npm run watch
+`npm run watch`
 
 E, finalmente, rodar a aplicação:
-> symfony server:start
+`symfony server:start`
 
 
 ## Banco de dados
 Criar esquema de dados:
-> php bin/console doctrine:database:create
+`php bin/console doctrine:database:create`
 
 Criar tabelas:
-> php bin/console make:migration
-> php bin/console doctrine:migrations:migrate
+`php bin/console make:migration`
+`php bin/console doctrine:migrations:migrate`

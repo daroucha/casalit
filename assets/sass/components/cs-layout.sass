@@ -1,0 +1,16 @@
+/* Layout component
+
+.cs-component-layout
+  box-sizing: border-box
+  display: grid
+  grid-auto-flow: column
+  grid-column-gap: $space-g
+  grid-template-columns: repeat(12, 1fr)
+  height: 100%
+  width: 100%
+
+  &.use-margin
+    margin: 0px
+    margin-left: $space-m
+    margin-right: $space-m
+    width: calc(100% - #{$space-m} * 2)

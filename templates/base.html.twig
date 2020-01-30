@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>{% block title %}Casalit - É Casalit? Tá em casa!{% endblock %}</title>
     {% block stylesheets %}
-      {{ encore_entry_link_tags('css/app') }}
+      {{ encore_entry_link_tags('app/style') }}
     {% endblock %}
   </head>
 
@@ -115,7 +115,7 @@
     </div>
 
     {% block endscripts %}
-      {{ encore_entry_script_tags('vue/app') }}
+      
     {% endblock endscripts %}
   </body>
 </html>
