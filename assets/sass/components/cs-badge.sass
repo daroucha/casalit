@@ -20,6 +20,9 @@
     flex-direction: row
     justify-content: space-between
 
+  .cs-badge-contents-thumbnail
+    justify-content: center
+
   .cs-badge-contents-text
     margin-bottom: $space-53
     margin-left: $column-width
@@ -27,14 +30,11 @@
     margin-right: $column-width
     width: auto
 
-    h2
-      @include type(28px, 700)
+    h1, h2
       align-items: center
-      color: $grey-0t
       display: flex
       flex-direction: row
       margin-bottom: $space-8
-      letter-spacing: -0.28px
 
       svg 
         fill: $grey-0y
@@ -42,11 +42,6 @@
         &.stroke
           stroke: $grey-0y
           stroke-width: 1px
-
-    p
-      @include type(14px, 400)
-      color: $grey-0y
-      line-height: 21px
 
     a
       margin-top: $space-24
