@@ -1,0 +1,63 @@
+/* Badge component
+
+.cs-component-badge
+  background-color: $grey-0a
+  grid-column: 1/-1
+
+  @for $i from 1 through 10
+    &.i-#{$i}
+      grid-column-start: $i
+      &.half
+        @if $i >= 7
+          grid-column-end: -1
+        @else 
+          grid-column-end: 7
+
+  .cs-badge-contents,
+  .cs-badge-contents-thumbnail
+    align-items: center
+    display: flex
+    flex-direction: row
+    justify-content: space-between
+
+  .cs-badge-contents-text
+    margin-bottom: $space-53
+    margin-left: $column-width
+    margin-top: $space-53
+    margin-right: $column-width
+    width: auto
+
+    h2
+      @include type(28px, 700)
+      align-items: center
+      color: $grey-0t
+      display: flex
+      flex-direction: row
+      margin-bottom: $space-8
+      letter-spacing: -0.28px
+
+      svg 
+        fill: $grey-0y
+        margin-right: $space-12
+        &.stroke
+          stroke: $grey-0y
+          stroke-width: 1px
+
+    p
+      @include type(14px, 400)
+      color: $grey-0y
+      line-height: 21px
+
+    a
+      margin-top: $space-24
+
+  .cs-badge-contents-thumbnail
+    margin-bottom: $space-49
+    margin-top: $space-49
+    margin-right: $column-width
+    max-width: calc(#{$column-width} * 5)
+
+    img
+      display: inline-block
+      max-width: calc(#{$column-width} * 2.5)
+      -webkit-user-drag: none

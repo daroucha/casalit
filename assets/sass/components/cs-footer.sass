@@ -1,0 +1,74 @@
+/* Footer component
+
+.cs-component-footer
+  background-color: $grey-0a
+  clear: both
+  height: 176px
+  margin-top: $space-49
+  overflow: hidden
+  width: 100%
+
+  .cs-footer-navigation-wrapper
+    align-items: center
+    background-color: transparent
+    display: flex
+    flex-direction: row
+    height: 100%
+    margin: 0px
+    margin-left: $space-m
+    margin-right: $space-m
+    width: calc(100% - #{$space-m} * 2)
+
+    .cs-footer-left-area,
+    .cs-footer-right-area
+      display: flex
+      flex-direction: column
+      justify-content: space-between
+      margin-bottom: $space-24
+      margin-top: $space-32
+      width: 50%
+
+    .cs-footer-left-area
+      align-items: flex-start
+
+      .cs-footer-brand-area
+        margin-bottom: $space-32
+
+        svg
+          display: block
+
+        .cs-footer-brand-rights
+          @include type(12px, 400)
+          color: $grey-0y
+          display: block
+          margin-top: $space-16
+          user-select: none
+
+      .cs-footer-navigation-area
+        align-items: center
+        display: flex
+        flex-direction: row
+        justify-content: flex-start
+
+        .cs-footer-nav-link
+          @include type(14px, 400)
+          color: $grey-0y
+          margin-right: $space-56
+          &:hover
+            color: $blue-0x
+          &.router-link-exact-active
+            @include type(14px, 600)
+            color: $blue-0x
+
+    .cs-footer-right-area
+      align-items: flex-end
+
+      .cs-footer-address-area
+        @include type(12px, 400)
+        color: $grey-0y
+
+        p
+          display: block
+          text-align: right
+          &:not(:last-child)
+            margin-bottom: 4px
