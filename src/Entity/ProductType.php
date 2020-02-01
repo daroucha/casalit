@@ -32,7 +32,7 @@ class ProductType
     private $image;
 
     /**
-     * @Vich\UploadableField(mapping="product", fileNameProperty="image")
+     * @Vich\UploadableField(mapping="product_type", fileNameProperty="image")
      * @var File
      */
     private $imageFile;
@@ -51,6 +51,16 @@ class ProductType
      * @ORM\Column(type="datetime", nullable=true)
      */
     private $updated_at;
+
+    /**
+     * @ORM\Column(type="text", nullable=true)
+     */
+    private $description;
+
+    /**
+     * @ORM\Column(type="text", nullable=true)
+     */
+    private $details;
 
     public function __construct()
     {
@@ -79,11 +89,7 @@ class ProductType
     {
         $this->imageFile = $image;
 
-        // VERY IMPORTANT:
-        // It is required that at least one field changes if you are using Doctrine,
-        // otherwise the event listeners won't be called and the file is lost
         if ($image) {
-            // if 'updatedAt' is not defined in your entity, use another property
             $this->updated_at = new \DateTime('now');
         }
     }
@@ -163,5 +169,29 @@ class ProductType
     public function __toString(): string
     {
         return $this->title;
+    }
+
+    public function getDescription(): ?string
+    {
+        return $this->description;
+    }
+
+    public function setDescription(?string $description): self
+    {
+        $this->description = $description;
+
+        return $this;
+    }
+
+    public function getDetails(): ?string
+    {
+        return $this->details;
+    }
+
+    public function setDetails(?string $details): self
+    {
+        $this->details = $details;
+
+        return $this;
     }
 }

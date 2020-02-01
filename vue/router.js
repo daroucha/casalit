@@ -31,6 +31,16 @@ export default new VueRouter({
       meta: {transitionName: 'slide'}
     },
     {
+      path: '/products/type/:id',
+      component: () => import('./routes/ProductType.vue'),
+      meta: {transitionName: 'slide'}
+    },
+    {
+      path: '/products/product/:id',
+      component: () => import('./routes/Product.vue'),
+      meta: {transitionName: 'slide'}
+    },
+    {
       path: '/contact',
       name: 'Contact',
       component: () => import('./routes/Contact.vue'),

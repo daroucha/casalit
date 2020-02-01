@@ -29,22 +29,6 @@
                 <li class="menu-item {% if app.request.get('_route') == 'home' %}current-menu-item{% endif %}">
                   <a href="{{ path('home') }}">{{ 'navigation.home'|trans }}</h3></a>
                 </li>
-
-                <li class="menu-item {% if app.request.get('_route') == 'company' %}current-menu-item{% endif %}">
-                  <a href="{{ path('company') }}">{% trans %}navigation.company{% endtrans %}</a>
-                </li>
-
-                <li class="menu-item {% if app.request.get('_route') == 'products' %}current-menu-item{% endif %}">
-                  <a href="{{ path('products') }}">{% trans %}navigation.products{% endtrans %}</a>
-                </li>
-
-                <li class="menu-item {% if app.request.get('_route') == 'locations' %}current-menu-item{% endif %}">
-                  <a href="{{ path('locations') }}">{% trans %}navigation.locations{% endtrans %}</a>
-                </li>
-
-                <li class="menu-item {% if app.request.get('_route') == 'contact' %}current-menu-item{% endif %}">
-                  <a href="{{ path('contact') }}">{% trans %}navigation.contact{% endtrans %}</a>
-                </li>
               </vue-navigation>
             </nav>
             
@@ -87,22 +71,6 @@
               <vue-navigation>
                 <li class="menu-item {% if app.request.get('_route') == 'home' %}current-menu-item{% endif %}">
                   <a href="{{ path('home') }}">{{ 'navigation.home'|trans }}</h3></a>
-                </li>
-
-                <li class="menu-item {% if app.request.get('_route') == 'company' %}current-menu-item{% endif %}">
-                  <a href="{{ path('company') }}">{% trans %}navigation.company{% endtrans %}</a>
-                </li>
-
-                <li class="menu-item {% if app.request.get('_route') == 'products' %}current-menu-item{% endif %}">
-                  <a href="{{ path('products') }}">{% trans %}navigation.products{% endtrans %}</a>
-                </li>
-
-                <li class="menu-item {% if app.request.get('_route') == 'locations' %}current-menu-item{% endif %}">
-                  <a href="{{ path('locations') }}">{% trans %}navigation.locations{% endtrans %}</a>
-                </li>
-
-                <li class="menu-item {% if app.request.get('_route') == 'contact' %}current-menu-item{% endif %}">
-                  <a href="{{ path('contact') }}">{% trans %}navigation.contact{% endtrans %}</a>
                 </li>
               </vue-navigation>
             </nav>

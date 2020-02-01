@@ -44,3 +44,25 @@
     @include type(14px, 400)
     color: $grey-0y
     line-height: 21px
+
+  .cs-breadcrumb
+    align-items: center
+    display: flex
+    flex-direction: row
+    list-style: none
+
+    li, a
+      @include type(13px, 400)
+
+    li
+      color: $grey-0x
+
+    .cs-bc-ref
+      margin-right: $space-4
+
+    .cs-bc-separator
+      margin-left: $space-8
+      margin-right: $space-8
+
+    .cs-bc-path
+      color: $grey-0y

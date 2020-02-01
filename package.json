@@ -20,6 +20,7 @@
         "build": "encore production --progress"
     },
     "dependencies": {
+        "axios": "^0.19.2",
         "copy-webpack-plugin": "^5.1.1",
         "vue-carousel": "^0.18.0",
         "vue-router": "^3.1.5"

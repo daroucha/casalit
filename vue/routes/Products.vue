@@ -1,5 +1,5 @@
 <template>
-  <div class="cs-page-products">
+  <div class="cs-page-products" v-if="!loader">
     <div class="cs-page-company">
       <div class="cs-page-text-container">
         <div class="cs-page-text-content">
@@ -13,29 +13,16 @@
     </div>
 
     <cs-layout use-margin>
-      <cs-badge range="half" index="1">
+      <cs-badge range="half" v-for="type in types" :key="type.id" :index="gridIndex(type.id)">
         <div class="cs-badge-contents-text">
-          <h2>Telhas</h2>
-          <p>Conheça nossas telhas de fibrocimento.</p>
+          <h2>{{ type.title }}</h2>
+          <p>{{ type.description }}</p>
 
-          <router-link :to="{name: ''}">Ver telhas</router-link>
+          <router-link :to="{path: '/products/type/' + type.id}">Ver {{ type.title }}</router-link>
         </div>
 
         <div class="cs-badge-contents-thumbnail">
-          <img :src="require('../../public/images/5e2efd25beecd639352958.png')" />
-        </div>
-      </cs-badge>
-
-      <cs-badge range="half" index="7">
-        <div class="cs-badge-contents-text">
-          <h2>Peças complementares</h2>
-          <p>Conheça nossas peças complementares.</p>
-
-          <router-link :to="{name: ''}">Ver peças complementares</router-link>
-        </div>
-
-        <div class="cs-badge-contents-thumbnail">
-          <img :src="require('../../public/images/5e2f27b21b778373021723.png')" />
+          <img :src="require('../../public/images/' + type.image)" />
         </div>
       </cs-badge>
     </cs-layout>
@@ -43,6 +30,7 @@
 </template>
 
 <script>
+import axios from 'axios';
 import CsLayout from '../components/CsLayout';
 import CsBadge from '../components/CsBadge';
 
@@ -51,5 +39,34 @@ export default {
     CsLayout,
     CsBadge
   },
+  data() {
+    return {
+      loader: true,
+      product_types: null
+    }
+  },
+  computed: {
+    types: function() {
+      if (this.product_types != null)
+        return this.product_types['hydra:member']
+    }
+  },
+  methods: {
+    gridIndex: function(i) {
+      if (i % 2 == 0) {
+        return 7
+      } else {
+        return 1
+      }
+    }
+  },
+  mounted() {
+    axios
+      .get('http://localhost:8000/api/product_types')
+      .then(response => {
+        this.product_types = response.data
+        this.loader = false
+      })
+  }
 }
 </script>

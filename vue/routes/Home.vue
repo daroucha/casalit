@@ -38,8 +38,8 @@
           </div>
 
           <div class="cs-badge-contents-thumbnail">
-            <img :src="require('../../public/images/5e2efd25beecd639352958.png')" />
-            <img :src="require('../../public/images/5e2f27b21b778373021723.png')" />
+            <img :src="require('../../public/images/telhas.png')" />
+            <img :src="require('../../public/images/pecas.png')" />
           </div>
         </div>
       </cs-badge>

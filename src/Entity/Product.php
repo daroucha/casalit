@@ -51,6 +51,16 @@ class Product
      */
     private $technical_data;
 
+    /**
+     * @ORM\Column(type="text", nullable=true)
+     */
+    private $details;
+
+    /**
+     * @ORM\Column(type="datetime", nullable=true)
+     */
+    private $updatedAt;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -108,13 +118,14 @@ class Product
     {
         $this->imageFile = $image;
 
-        // VERY IMPORTANT:
-        // It is required that at least one field changes if you are using Doctrine,
-        // otherwise the event listeners won't be called and the file is lost
         if ($image) {
-            // if 'updatedAt' is not defined in your entity, use another property
-            // $this->updated_at = new \DateTime('now');
+            $this->updated_at = new \DateTime('now');
         }
+    }
+
+    public function getImageFile()
+    {
+        return $this->imageFile;
     }
 
     public function getTechnicalData(): ?string
@@ -132,5 +143,29 @@ class Product
     public function __toString(): string
     {
         return $this->title;
+    }
+
+    public function getDetails(): ?string
+    {
+        return $this->details;
+    }
+
+    public function setDetails(?string $details): self
+    {
+        $this->details = $details;
+
+        return $this;
+    }
+
+    public function getUpdatedAt(): ?\DateTimeInterface
+    {
+        return $this->updatedAt;
+    }
+
+    public function setUpdatedAt(\DateTimeInterface $updatedAt): self
+    {
+        $this->updatedAt = $updatedAt;
+
+        return $this;
     }
 }

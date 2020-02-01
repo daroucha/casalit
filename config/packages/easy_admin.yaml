@@ -8,7 +8,8 @@ easy_admin:
                   - { property: 'description', type: 'text' }
                   - { property: 'technical_data' }
                   - { property: 'type' }
-                  - { property: 'imageFile', type: 'file' }
+                  - { property: 'details' }
+                  - { property: 'imageFile', type: 'vich_image' }
           
       ProductType:
           class: App\Entity\ProductType
@@ -17,13 +18,16 @@ easy_admin:
                   - { property: 'id', type: 'integer' }
                   - { property: 'title', type: 'text' }
                   - { property: 'image', type: 'text' }
+                  - { property: 'description' }
+                  - { property: 'details' }
                   - { property: 'created_at' }
-                  - { property: 'updated_at' }
                   - { property: 'products' }
           form:
               fields:
                   - { property: 'title', type: 'text' }
-                  - { property: 'imageFile', type: 'file' }
+                  - { property: 'description' }
+                  - { property: 'details' }
+                  - { property: 'imageFile', type: 'vich_image' }
 
       User:
           class: App\Entity\User

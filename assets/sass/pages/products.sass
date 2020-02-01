@@ -1,8 +1,52 @@
 /* Pages layout
 
 .cs-page-products
+  .cs-breadcrumb
+    margin-bottom: $space-16
+
   > .cs-component-layout
     margin-top: $space-12
 
   > .cs-page-company .cs-page-text-container
     background-color: transparent
+
+  > .cs-page-product-type.cs-page-company .cs-page-text-container
+    display: flex
+    flex-direction: row
+    flex-flow: wrap
+    background-image: radial-gradient(circle, #FCFCFC, #F4F4F4)
+
+    .cs-page-inline-container
+      align-items: center
+      display: flex
+      flex-direction: row
+      width: 100%
+
+    .cs-page-text-layout
+        grid-template-columns: repeat(2, 1fr)
+        margin-right: $column-width
+
+    .cs-page-text-thumbnail
+      align-items: center
+      display: flex
+      justify-content: center
+      margin-left: auto
+
+      > img
+        display: block
+        max-height: 100%
+        width: calc(#{$column-width} * 2)
+
+  .cs-page-company.cs-page-product-single
+    .cs-page-text-container
+      padding-left: calc(#{$space-m} + #{$column-width})
+      padding-right: calc(#{$space-m} + #{$column-width})
+      width: calc(100% - ((#{$space-m} * 2) + (#{$column-width} * 2)))
+
+      .cs-page-text-layout
+        grid-template-columns: 1fr
+        margin-right: $column-width
+
+      .cs-page-text-thumbnail
+        > img
+          width: calc(#{$column-width} * 4)
