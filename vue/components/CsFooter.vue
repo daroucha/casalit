@@ -19,12 +19,12 @@
         </div>
 
         <nav class="cs-footer-navigation-area">
-          <router-link class="cs-footer-nav-link" :to="{name: 'Home'}">Página inicial</router-link>
-          <router-link class="cs-footer-nav-link" :to="{name: 'Company'}">Empresa</router-link>
+          <a class="cs-footer-nav-link" href="/">Página inicial</a>
+          <a class="cs-footer-nav-link" href="/company">Empresa</a>
           <router-link class="cs-footer-nav-link" :to="{name: 'Products'}">Produtos</router-link>
-          <!-- <router-link class="cs-footer-nav-link" :to="{name: 'Locations'}">Onde encontrar</router-link>
-          <router-link class="cs-footer-nav-link" :to="{name: 'Stores'}">Revendas</router-link> -->
-          <router-link class="cs-footer-nav-link" :to="{name: 'Contact'}">Fale conosco</router-link>
+          <!-- <a class="cs-footer-nav-link" href="{name: 'Locations'}">Onde encontrar</a>
+          <a class="cs-footer-nav-link" href="{name: 'Stores'}">Revendas</a> -->
+          <a class="cs-footer-nav-link" href="/contact">Fale conosco</a>
         </nav>
       </div>
 

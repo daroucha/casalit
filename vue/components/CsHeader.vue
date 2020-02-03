@@ -14,7 +14,7 @@
       </div>
 
       <nav class="cs-header-navigation-area">
-        <router-link class="cs-header-nav-link" :to="{name: 'Home'}">
+        <a class="cs-header-nav-link" href="/">
           <div class="cs-header-nav-link-contents">
             <svg class="cs-header-nav-route-symbol" xmlns="http://www.w3.org/2000/svg" width="20.839" height="18" viewBox="0 0 20.839 18">
               <g transform="translate(-0.66 -1.32)"><path d="M11.08,1.32.66,10.991l.965,1.043.937-.871V19.32h7.1v-7.1H12.5v7.1h7.1V11.163l.937.871.965-1.043Zm0,1.93,7.1,6.6V17.9H13.919V10.8H8.241v7.1H3.982V9.849Z"/></g>
@@ -22,9 +22,9 @@
 
             <span class="cs-header-nav-route-title">Página inicial</span>
           </div>
-        </router-link>
+        </a>
 
-        <router-link class="cs-header-nav-link" :to="{name: 'Company'}">
+        <a class="cs-header-nav-link" href="/company">
           <div class="cs-header-nav-link-contents">
             <svg class="cs-header-nav-route-symbol stroke" xmlns="http://www.w3.org/2000/svg" width="28.595" height="19.003" viewBox="0 0 28.595 19.003">
               <path d="M27.378,6.256,22.718,4.5,16.449,2.135c-.752-.284-1.5-.571-2.258-.848a1.8,1.8,0,0,0-.386-.064c-.309-.042-.617-.082-.925-.122l-.8-.1-.918-.12-.79-.1L9.451.651l-.8-.1L7.742.427l-.8-.1L6.133.217l-.79-.1L4.56.012A.111.111,0,0,1,4.531,0H4.492a.63.63,0,0,0-.053.069L.849,6.4.024,7.852A.344.344,0,0,1,0,7.886V7.9a.072.072,0,0,0,.07.042H2.042v8.051l10.71,2,.025,0,12.834-.819V6.233l.2.015.8.067.928.074A.337.337,0,0,1,27.6,6.4v-.07C27.523,6.3,27.45,6.283,27.378,6.256ZM12.587,17.547l-10.135-1.9V7.633L2.534,7.5,5.206,3.216Q5.836,2.207,6.465,1.2c.024-.039.042-.041.074-.024q3.023,1.646,6.046,3.286Zm.685-12.717c.277.151.553.309.833.448a.736.736,0,0,0,.273.05c.392.034.784.065,1.176.1l.962.075,1.132.093q.391.032.783.058l1.132.092c.254.021.509.04.763.058l1.156.094.753.058L23.4,6.05l.768.058,1.152.094h-.117V16.8L13,17.576V4.682Z" transform="translate(0.5 0.5)"/>
@@ -32,9 +32,9 @@
 
             <span class="cs-header-nav-route-title">Empresa</span>
           </div>
-        </router-link>
+        </a>
 
-        <router-link class="cs-header-nav-link" :to="{name: 'Products'}">
+        <router-link class="cs-header-nav-link router-link-exact-active" :to="{name: 'Products'}">
           <div class="cs-header-nav-link-contents">
             <svg class="cs-header-nav-route-symbol" xmlns="http://www.w3.org/2000/svg" width="26.27" height="18" viewBox="0 0 26.27 18">
               <path d="M13.093,3.038a.821.821,0,0,0-.516.218L.263,14.687a.821.821,0,0,0,.558,1.424H3.284v4.925H4.926V16.111H21.344v4.925h1.642V16.111h2.463a.821.821,0,0,0,.558-1.424l-4.662-4.329V4.618H19.7V8.835l-6.009-5.58a.821.821,0,0,0-.6-.218Zm.042,1.94,10.223,9.492H2.912Z" transform="translate(0 -3.036)"/>
@@ -44,7 +44,7 @@
           </div>
         </router-link>
 
-        <!-- <router-link class="cs-header-nav-link" :to="{name: 'Locations'}">
+        <!-- <a class="cs-header-nav-link" href="{name: 'Locations'}">
           <div class="cs-header-nav-link-contents">
             <svg class="cs-header-nav-route-symbol" xmlns="http://www.w3.org/2000/svg" width="13.05" height="18" viewBox="0 0 13.05 18">
               <path d="M9.525,1A6.538,6.538,0,0,0,3,7.525a7.864,7.864,0,0,0,.984,3.283A30.394,30.394,0,0,0,6.048,14.32c1.489,2.238,2.972,4.058,2.972,4.058l.5.622.5-.622s1.483-1.82,2.977-4.058a31.1,31.1,0,0,0,2.059-3.512,7.864,7.864,0,0,0,.984-3.283A6.538,6.538,0,0,0,9.525,1Zm0,1.305a5.211,5.211,0,0,1,5.22,5.22,7.282,7.282,0,0,1-.851,2.712A31.184,31.184,0,0,1,11.921,13.6c-1.2,1.794-2.014,2.783-2.4,3.263-.382-.479-1.2-1.468-2.4-3.263a31.184,31.184,0,0,1-1.973-3.364,7.282,7.282,0,0,1-.851-2.712A5.211,5.211,0,0,1,9.525,2.305Zm0,3.915A1.305,1.305,0,1,0,10.83,7.525,1.308,1.308,0,0,0,9.525,6.22Z" transform="translate(-3 -1)" />
@@ -52,9 +52,9 @@
 
             <span class="cs-header-nav-route-title">Onde encontrar</span>
           </div>
-        </router-link>
+        </a>
 
-        <router-link class="cs-header-nav-link" :to="{name: 'Stores'}">
+        <a class="cs-header-nav-link" href="{name: 'Stores'}">
           <div class="cs-header-nav-link-contents">
             <svg class="cs-header-nav-route-symbol" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18">
               <path d="M4.462,1A2.087,2.087,0,0,0,2.385,3.077V4.132L1,7.077v.154A2.081,2.081,0,0,0,2.385,9.178v7.745A2.087,2.087,0,0,0,4.462,19H15.538a2.087,2.087,0,0,0,2.077-2.077V9.178A2.081,2.081,0,0,0,19,7.231V7.077L17.615,4.132V3.077A2.087,2.087,0,0,0,15.538,1Zm0,1.385h.692V3.769H3.769V3.077A.683.683,0,0,1,4.462,2.385Zm2.077,0H7.923V3.769H6.538Zm2.769,0h6.231a.683.683,0,0,1,.692.692v.692H9.308ZM3.437,5.154H16.563l1,2.128a.668.668,0,0,1-.641.641.683.683,0,0,1-.692-.692V6.538H14.846v.692a.692.692,0,0,1-1.385,0V6.538H12.077v.692a.692.692,0,0,1-1.385,0V6.538H9.308v.692a.692.692,0,0,1-1.385,0V6.538H6.538v.692a.692.692,0,0,1-1.385,0V6.538H3.769v.692a.683.683,0,0,1-.692.692.668.668,0,0,1-.641-.641Zm1.025,3.61a2.035,2.035,0,0,0,2.769,0,2.035,2.035,0,0,0,2.769,0,2.035,2.035,0,0,0,2.769,0,2.035,2.035,0,0,0,2.769,0,2.075,2.075,0,0,0,.692.414v7.745a.683.683,0,0,1-.692.692H4.462a.683.683,0,0,1-.692-.692V9.181A2.116,2.116,0,0,0,4.462,8.764Z" transform="translate(-1 -1)" />
@@ -62,9 +62,9 @@
 
             <span class="cs-header-nav-route-title">Revendas</span>
           </div>
-        </router-link> -->
+        </a> -->
 
-        <router-link class="cs-header-nav-link" :to="{name: 'Contact'}">
+        <a class="cs-header-nav-link" href="/contact">
           <div class="cs-header-nav-link-contents">
             <svg class="cs-header-nav-route-symbol" xmlns="http://www.w3.org/2000/svg" width="19.385" height="18" viewBox="0 0 19.385 18">
               <g transform="translate(-1 -2)"><path d="M4.965,2A3.991,3.991,0,0,0,1,6V17.231h9.692V20h1.385V17.231h8.308V6A3.988,3.988,0,0,0,16.42,2Zm0,1.385h.379A2.583,2.583,0,0,1,7.923,6v9.849H2.385V5.992A2.589,2.589,0,0,1,4.965,3.385Zm3.348,0H16.42A2.587,2.587,0,0,1,19,6v9.849H9.308V6A3.974,3.974,0,0,0,8.313,3.385Zm2.38,2.769V7.538h5.538V8.923h1.385V6.154ZM3.769,7.538V8.923H6.538V7.538Z"/></g>
@@ -72,7 +72,7 @@
 
             <span class="cs-header-nav-route-title">Fale conosco</span>
           </div>
-        </router-link>
+        </a>
       </nav>
     </div>
   </header>

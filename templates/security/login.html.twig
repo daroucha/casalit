@@ -1,42 +1,42 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Log in!{% endblock %}
+{% block page_style %}cs-page-contact{% endblock %}
 
 {% block body %}
-<form method="post">
-    {% if error %}
-        <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
-    {% endif %}
 
-    {% if app.user %}
-        <div class="mb-3">
-            You are logged in as {{ app.user.username }}, <a href="{{ path('app_logout') }}">Logout</a>
-        </div>
-    {% endif %}
+<cs-layout use-margin>
+  <cs-badge range="half" index="1">
+    <div class="cs-badge-contents-text">
+      <h2>Login</h2>
+      <p>Esta é uma área restrita.</p>
 
-    <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
-    <label for="inputUsername">Username</label>
-    <input type="text" value="{{ last_username }}" name="username" id="inputUsername" class="form-control" required autofocus>
-    <label for="inputPassword">Password</label>
-    <input type="password" name="password" id="inputPassword" class="form-control" required>
+      {% if error %}
+        <p class="cs-badge-contents-alert">{{ error.messageKey|trans(error.messageData, 'security') }}</p>
+      {% endif %}
+    </div>
+  </cs-badge>
 
-    <input type="hidden" name="_csrf_token"
-           value="{{ csrf_token('authenticate') }}"
-    >
+  <cs-badge range="half" index="7">
+    <div class="cs-badge-contents-text">
+      <form class="cs-badge-contents-form" method="post">
+        <fieldset>
+          <label>Nome de usuário</label>
+          <input type="text" value="{{ last_username }}" name="username" id="inputUsername" class="form-control" required autofocus>
+        </fieldset>
 
-    {#
-        Uncomment this section and add a remember_me option below your firewall to activate remember me functionality.
-        See https://symfony.com/doc/current/security/remember_me.html
+        <fieldset>
+          <label>Senha</label>
+          <input type="password" name="password" id="inputPassword" class="form-control" required autocomplete="current-password">
+        </fieldset>
 
-        <div class="checkbox mb-3">
-            <label>
-                <input type="checkbox" name="_remember_me"> Remember me
-            </label>
-        </div>
-    #}
+        <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
 
-    <button class="btn btn-lg btn-primary" type="submit">
-        Sign in
-    </button>
-</form>
+        <fieldset class="message">
+          <button class="cs-button" type="submit">Entrar</button>
+        </fieldset>
+      </form>
+    </div>
+  </cs-badge>
+</cs-layout>
+
 {% endblock %}

@@ -18,7 +18,7 @@
           <h2>{{ type.title }}</h2>
           <p>{{ type.description }}</p>
 
-          <router-link :to="{path: '/products/type/' + type.id}">Ver {{ type.title }}</router-link>
+          <router-link :to="{path: '/type/' + type.id}">Ver {{ type.title }}</router-link>
         </div>
 
         <div class="cs-badge-contents-thumbnail">

@@ -45,6 +45,26 @@
     color: $grey-0y
     line-height: 21px
 
+  .cs-button
+    @include type(14px, 600)
+    background-color: $blue-0x
+    background-image: url('../../images/arrows_long_right.png')
+    background-position: right #{$space-16} center
+    background-repeat: no-repeat
+    background-size: auto
+    color: $white
+    cursor: pointer
+    outline: none
+    padding: $space-8
+    padding-right: $space-120
+    transition: 200ms ease
+
+    &:hover
+      background-color: $purple-0x
+
+    &:active
+      transform: scale(0.9)
+
   .cs-breadcrumb
     align-items: center
     display: flex

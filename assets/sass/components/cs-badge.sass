@@ -46,6 +46,9 @@
           stroke: $grey-0y
           stroke-width: 1px
 
+    .cs-badge-contents-text-area
+      margin-top: $space-24
+
     a
       margin-top: $space-24
 
@@ -133,3 +136,52 @@
                 left: 0px
                 position: absolute
                 width: 1px
+
+  .cs-badge-contents-alert
+    align-items: center
+    background-color: $red-0x
+    color: $white
+    display: flex
+    flex-direction: row
+    justify-content: space-between
+    margin-top: $space-24
+    padding: $space-8
+
+  .cs-badge-contents-form
+    display: block
+    width: 100%
+
+    fieldset
+      display: block
+      width: 100%
+
+      &.message
+        align-items: center
+        display: flex
+        flex-direction: row
+        justify-content: space-between
+
+      &:not(:last-child)
+        margin-bottom: $space-24
+
+      label
+        @include type(12px, 300)
+        color: $grey-0x
+        display: block
+        margin-bottom: $space-8
+        width: 100%
+
+      input
+        @include type(14px, 400)
+        box-sizing: border-box
+        box-shadow: 0 0 0 1px $grey-0a
+        color: $grey-0y
+        display: block
+        height: 36px
+        outline: none
+        padding: $space-8
+        width: 100%
+
+        &:focus
+          box-shadow: 0 0 0 2px $blue-0x
+          color: $grey-0t

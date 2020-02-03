@@ -1,20 +1,29 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello ContactController!{% endblock %}
+{% block page_style %}cs-page-contact{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
+<cs-layout use-margin>
+  <cs-badge range="half" index="1">
+    <div class="cs-badge-contents-text">
+      <h2>Fale conosco</h2>
+      <p>Estamos sempre à disposição para ouvir você. Entre em contato conosco, por meio de uma mensagem, ou, ligue para o número de telefone abaixo.</p>
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ '/Users/pauloefamilia/Sites/casalit/src/Controller/ContactController.php'|file_link(0) }}">src/Controller/ContactController.php</a></code></li>
-        <li>Your template at <code><a href="{{ '/Users/pauloefamilia/Sites/casalit/templates/contact/index.html.twig'|file_link(0) }}">templates/contact/index.html.twig</a></code></li>
-    </ul>
-</div>
+      <div class="cs-badge-contents-text-area">
+        <p>Av. Mascarenhas de Morais, 521, Chácara Rio Petrópolis</p>
+        <p>Duque de Caxias - RJ, CEP 25230-030</p>
+        <p>Telefone: (21) 2677-5000 | Fax: (21) 2677-5011</p>
+        <p>E-mail: vendas@casalit.com.br</p>
+      </div>
+    </div>
+  </cs-badge>
+
+  <cs-badge range="half" index="7">
+    <div class="cs-badge-contents-text">
+      <form></form>
+    </div>
+  </cs-badge>
+</cs-layout>
+
 {% endblock %}

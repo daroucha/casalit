@@ -33,7 +33,7 @@
           <h2>{{ product.name }}</h2>
           <p>{{ product.description }}</p>
 
-          <router-link :to="{path: '/products/product/' + product.id}">Ver {{ product.name }}</router-link>
+          <router-link :to="{path: '/product/' + product.id}">Ver {{ product.name }}</router-link>
         </div>
 
         <div class="cs-badge-contents-thumbnail" v-if="product.image != null">
