@@ -47,9 +47,12 @@ Encore
     .addEntry('app/style', './assets/sass/casalit.sass')
     .addEntry('app', './vue/app.js')
 
+    .addEntry('legacy', './assets/js/app.js')
+
     .addPlugin(new CopyWebpackPlugin([
       { from: './assets/fonts', to: 'fonts' },
       { from: './assets/images', to: 'images' },
+      { from: './assets/banner', to: 'banner' },
       { from: './assets/vectors', to: 'vectors' },
       // { from: './assets/favicons', to: 'favicons' },
       // { from: './assets/webmanifest.json', to: 'webmanifest.json' }

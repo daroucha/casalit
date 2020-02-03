@@ -38,10 +38,10 @@ class Product
     /**
      * @ORM\Column(type="text", nullable=true)
      */
-    private $picture;
+    private $image;
 
     /**
-     * @Vich\UploadableField(mapping="product", fileNameProperty="picture")
+     * @Vich\UploadableField(mapping="product_type", fileNameProperty="image")
      * @var File
      */
     public $imageFile;
@@ -60,6 +60,16 @@ class Product
      * @ORM\Column(type="datetime", nullable=true)
      */
     private $updatedAt;
+
+    /**
+     * @ORM\Column(type="datetime")
+     */
+    private $createdAt;
+
+    public function __construct()
+    {
+      $this->createdAt = new \DateTime();
+    }
 
     public function getId(): ?int
     {
@@ -102,14 +112,14 @@ class Product
         return $this;
     }
 
-    public function getPicture(): ?string
+    public function getImage(): ?string
     {
-        return $this->picture;
+        return $this->image;
     }
 
-    public function setPicture(?string $picture): self
+    public function setImage(?string $image): self
     {
-        $this->picture = $picture;
+        $this->image = $image;
 
         return $this;
     }
@@ -119,7 +129,7 @@ class Product
         $this->imageFile = $image;
 
         if ($image) {
-            $this->updated_at = new \DateTime('now');
+            $this->updatedAt = new \DateTime('now');
         }
     }
 
@@ -165,6 +175,18 @@ class Product
     public function setUpdatedAt(\DateTimeInterface $updatedAt): self
     {
         $this->updatedAt = $updatedAt;
+
+        return $this;
+    }
+
+    public function getCreatedAt(): ?\DateTimeInterface
+    {
+        return $this->createdAt;
+    }
+
+    public function setCreatedAt(\DateTimeInterface $createdAt): self
+    {
+        $this->createdAt = $createdAt;
 
         return $this;
     }

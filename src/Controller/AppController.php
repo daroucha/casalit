@@ -8,7 +8,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class AppController extends AbstractController
 {
     /**
-     * @Route("/", name="home")
+     * @Route("/products", name="app_products")
      */
     public function index()
     {
@@ -19,7 +19,7 @@ class AppController extends AbstractController
     }
 
     /**
-     * @Route("/#/{vueRouting}", name="index")
+     * @Route("/#/{vueRouting}", name="app_products_index")
      * @return Response
      */
     public function vueRouting(): Response

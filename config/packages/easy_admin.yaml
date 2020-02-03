@@ -2,6 +2,15 @@ easy_admin:
    entities:
       Product:
           class: App\Entity\Product
+          list:
+              fields:
+                  - { property: 'id', type: 'integer' }
+                  - { property: 'name', type: 'text' }
+                  - { property: 'description', type: 'text' }
+                  - { property: 'type' }
+                  - { property: 'details' }
+                  - { property: 'image', type: 'text' }
+                  - { property: 'updatedAt' }
           form:
               fields:
                   - { property: 'name', type: 'text' }

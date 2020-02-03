@@ -19,7 +19,7 @@
           </div>
 
           <div class="cs-page-text-thumbnail">
-            <img :src="require('../../public/images/' + product_type.image)" />
+            <img :src="require('../../public/products/' + product_type.image)" />
           </div>
         </div>
       </div>
@@ -36,8 +36,8 @@
           <router-link :to="{path: '/products/product/' + product.id}">Ver {{ product.name }}</router-link>
         </div>
 
-        <div class="cs-badge-contents-thumbnail" v-if="product.picture != null">
-          <!-- <img :src="require('../../public/images/' + product.picture)" /> -->
+        <div class="cs-badge-contents-thumbnail" v-if="product.image != null">
+          <img :src="require('../../public/products/' + product.image)" />
         </div>
       </cs-badge>
     </cs-layout>

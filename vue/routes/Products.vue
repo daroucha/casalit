@@ -22,7 +22,7 @@
         </div>
 
         <div class="cs-badge-contents-thumbnail">
-          <img :src="require('../../public/images/' + type.image)" />
+          <img :src="require('../../public/products/' + type.image)" />
         </div>
       </cs-badge>
     </cs-layout>

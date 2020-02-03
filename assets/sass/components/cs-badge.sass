@@ -30,6 +30,9 @@
     margin-right: $column-width
     width: auto
 
+    &.limited
+      max-width: calc(#{$column-width} * 3)
+
     h1, h2
       align-items: center
       display: flex
@@ -56,3 +59,77 @@
       display: inline-block
       max-width: calc(#{$column-width} * 2.5)
       -webkit-user-drag: none
+
+  .cs-badge-contents-table
+    display: block
+    margin-bottom: $space-97
+    margin-top: $space-97
+    margin-right: $column-width
+    width: calc(#{$column-width} * 4)
+
+    table
+      display: block
+      width: 100%
+
+      tbody
+        display: block
+        width: 100%
+
+      tr
+        align-items: center
+        display: flex
+        flex-direction: row
+        height: 34px
+        justify-content: flex-start
+        width: 100%
+
+        &:nth-child(even)
+          background-color: $grey-0a
+
+        td:first-child
+          @include type(14px, 400)
+          color: $grey-0e
+          direction: rtl
+          height: 34px
+          line-height: 34px
+          margin-right: $space-24
+          position: relative
+          text-align: right
+          width: 50%
+
+          &::after
+            background-color: $grey-0c
+            content: ''
+            height: 100%
+            right: 0px
+            position: absolute
+            transform: translateX($space-24)
+            width: 1px
+
+        td
+          @include type(14px, 600)
+          color: $grey-0y
+          display: inline-flex
+          flex-direction: row
+          height: 34px
+          line-height: 34px
+          margin-left: $space-24
+          position: relative
+          width: 50%
+
+          span
+            box-sizing: border-box
+            display: block
+            position: relative
+            width: 50%
+
+            &:not(:first-child)
+              padding-left: $space-24
+
+              &::after
+                background-color: $grey-0c
+                content: ''
+                height: 100%
+                left: 0px
+                position: absolute
+                width: 1px

@@ -21,7 +21,7 @@
           </div>
 
           <div class="cs-page-text-thumbnail">
-            <img :src="require('../../public/images/' + product_type.image)" />
+            <img :src="require('../../public/products/' + product.image)" />
           </div>
         </div>
       </div>
@@ -30,15 +30,13 @@
     <cs-layout use-margin>
       <cs-badge>
         <div class="cs-badge-contents">
-          <div class="cs-badge-contents-text">
+          <div class="cs-badge-contents-text limited">
             <p>As telhas fabricadas pela Casalit obedecem às Normas Técnicas Brasileiras, NBR 15210-1 e NBR 15210-2.</p>
             <p>&nbsp;</p>
             <p>A garantia de 5 anos das telhas Casalit está condicionada à correta instalação, conforme a Norma Técnica Brasileira, NBR 7196.</p>
           </div>
 
-          <div class="cs-badge-contents-thumbnail">
-            
-          </div>
+          <div class="cs-badge-contents-table" v-html="product.technicalData" />
         </div>
       </cs-badge>
 

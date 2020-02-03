@@ -12,11 +12,11 @@
       paginationColor="rgba(255, 255, 255, 0.54)"
       >
         <slide data-index="0">
-          <div class="cs-carousel-content" :style="'background-image: url(' + require('../../assets/images/banner-slogan-1.png') + ')'" />
+          <div class="cs-carousel-content" :style="'background-image: url(' + require('../../assets/banner/banner-slogan-1.png') + ')'" />
         </slide>
 
         <slide>
-          <div class="cs-carousel-content" :style="'background-image: url(' + require('../../assets/images/banner-pecas-complementares-2.png') + ')'" />
+          <div class="cs-carousel-content" :style="'background-image: url(' + require('../../assets/banner/banner-pecas-complementares-2.png') + ')'" />
         </slide>
       </carousel>
     </div>
@@ -38,8 +38,8 @@
           </div>
 
           <div class="cs-badge-contents-thumbnail">
-            <img :src="require('../../public/images/telhas.png')" />
-            <img :src="require('../../public/images/pecas.png')" />
+            <img :src="require('../../public/products/telhas.png')" />
+            <img :src="require('../../public/products/pecas.png')" />
           </div>
         </div>
       </cs-badge>
