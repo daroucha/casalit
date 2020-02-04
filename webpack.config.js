@@ -53,7 +53,6 @@ Encore
       { from: './assets/fonts', to: 'fonts' },
       { from: './assets/images', to: 'images' },
       { from: './assets/banner', to: 'banner' },
-      { from: './assets/vectors', to: 'vectors' },
       // { from: './assets/favicons', to: 'favicons' },
       // { from: './assets/webmanifest.json', to: 'webmanifest.json' }
     ]))

@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block page_style %}cs-page-products{% endblock %}
+
+{% block body %}
+
+<div class="cs-page-company">
+  <div class="cs-page-text-container">
+    <div class="cs-page-text-content">
+      <h1>Resultados para: {{ term }}</h1>
+
+      <div class="cs-page-text-layout">
+        <p>Encontramos {{ results|length }} resultados.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<cs-layout use-margin>
+  {% for product in results %}
+    <cs-badge>
+      <div class="cs-badge-contents">
+        <div class="cs-badge-contents-text">
+          <h2>{{ product.name }}</h2>
+          <p>{{ product.description }}</p>
+
+          <a href="{{ path('app_products') }}#/product/{{ product.id }}">Abrir {{ product.name }}</a>
+        </div>
+
+        <div class="cs-badge-contents-thumbnail">
+          <img src="{{ asset('products/') }}{{ product.image }}" />
+        </div>
+      </div>
+    </cs-badge>
+  {% endfor %}
+</cs-layout>
+
+{% endblock %}
