@@ -20,8 +20,29 @@
     flex-direction: row
     justify-content: space-between
 
+  .cs-flash-notice
+    @include type(14px, 400)
+    align-items: center
+    background-color: $blue-0x
+    color: $white
+    display: flex
+    flex-direction: row
+    justify-content: flex-start
+    margin-bottom: $space-24
+    padding: $space-16
+    width: 100%
+
   .cs-badge-contents-thumbnail
     justify-content: center
+
+  .cs-badge-contents-center
+    align-items: flex-start
+    display: flex
+    flex-direction: column
+    height: 100%
+    justify-content: center
+    margin-bottom: auto !important
+    margin-top: auto !important
 
   .cs-badge-contents-text
     margin-bottom: $space-53
@@ -151,15 +172,19 @@
     display: block
     width: 100%
 
+    .message
+      align-items: center
+      display: flex
+      flex-direction: row
+      justify-content: space-between
+
+      p
+        @include type(12px, 300)
+        margin-right: $space-24
+
     fieldset
       display: block
       width: 100%
-
-      &.message
-        align-items: center
-        display: flex
-        flex-direction: row
-        justify-content: space-between
 
       &:not(:last-child)
         margin-bottom: $space-24
@@ -171,7 +196,7 @@
         margin-bottom: $space-8
         width: 100%
 
-      input
+      input, textarea
         @include type(14px, 400)
         box-sizing: border-box
         box-shadow: 0 0 0 1px $grey-0a
@@ -185,3 +210,7 @@
         &:focus
           box-shadow: 0 0 0 2px $blue-0x
           color: $grey-0t
+
+      textarea
+        resize: none
+        height: 120px

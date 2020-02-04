@@ -41,3 +41,14 @@ easy_admin:
       User:
           class: App\Entity\User
           controller: App\Controller\UserAdminController
+
+      Contact:
+          class: App\Entity\Contact
+          disabled_actions: ['new', 'edit']
+          list:
+              fields:
+                  - { property: 'id', type: 'integer' }
+                  - { property: 'name' }
+                  - { property: 'email' }
+                  - { property: 'subject' }
+                  - { property: 'message' }

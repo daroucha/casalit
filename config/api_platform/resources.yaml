@@ -1,3 +1,11 @@
 resources:
-    App\Entity\ProductType: ~
-    App\Entity\Product: ~
+    App\Entity\ProductType:
+        collectionOperations:
+          get: ~
+        itemOperations:
+            get: ~
+    App\Entity\Product:
+        collectionOperations:
+          get: ~
+        itemOperations:
+            get: ~
