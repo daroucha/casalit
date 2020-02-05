@@ -90,7 +90,7 @@
 
             <div class="cs-header-search-area">
               <form action="/products/search" method="post">
-                <input type="search" name="search" placeholder="Pesquisar" autocomplete="search" value="{% if var is defined and term is not null %}{{ term }}{% endif %}" />
+                <input style="background-image: url('{{ asset('build/images/search@2x.png') }}');" type="search" name="search" placeholder="Pesquisar" autocomplete="search" value="{% if var is defined and term is not null %}{{ term }}{% endif %}" />
               </form>
             </div>
           </div>

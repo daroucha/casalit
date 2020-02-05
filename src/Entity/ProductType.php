@@ -62,6 +62,18 @@ class ProductType
      */
     private $details;
 
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     * @var string
+     */
+    private $folder;
+
+    /**
+     * @Vich\UploadableField(mapping="downloads", fileNameProperty="folder")
+     * @var File
+    */
+    private $folderFile;
+
     public function __construct()
     {
         $this->products = new ArrayCollection();
@@ -193,5 +205,31 @@ class ProductType
         $this->details = $details;
 
         return $this;
+    }
+
+    public function getFolder(): ?string
+    {
+        return $this->folder;
+    }
+
+    public function setFolder(?string $folder): self
+    {
+        $this->folder = $folder;
+
+        return $this;
+    }
+
+    public function setFolderFile(File $file = null)
+    {
+        $this->folderFile = $file;
+
+        if ($file) {
+            $this->updated_at = new \DateTime('now');
+        }
+    }
+
+    public function getFolderFile()
+    {
+        return $this->folderFile;
     }
 }

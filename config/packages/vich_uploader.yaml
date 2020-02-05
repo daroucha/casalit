@@ -4,3 +4,7 @@ vich_uploader:
         product_type:
             uri_prefix: '%app.path.product%'
             upload_destination: '%kernel.project_dir%/public%app.path.product%'
+        
+        downloads:
+            uri_prefix: '%app.path.downloads%'
+            upload_destination: '%kernel.project_dir%/public%app.path.downloads%'

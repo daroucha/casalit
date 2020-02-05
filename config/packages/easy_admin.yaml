@@ -37,6 +37,7 @@ easy_admin:
                   - { property: 'description' }
                   - { property: 'details' }
                   - { property: 'imageFile', type: 'vich_image' }
+                  - { property: 'folderFile', type: 'vich_file' }
 
       User:
           class: App\Entity\User

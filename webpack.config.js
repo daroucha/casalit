@@ -65,6 +65,18 @@ Encore
         }
       ],
     })
+
+    .addLoader({
+      test: /\.(pdf)$/i,
+      use: [
+        {
+          loader: 'file-loader',
+          options: {
+            emitFile: true
+          },
+        },
+      ]
+    })
 ;
 
 module.exports = Encore.getWebpackConfig();

@@ -54,6 +54,13 @@
     &.limited
       max-width: calc(#{$column-width} * 3)
 
+    > svg
+      display: block
+      margin-bottom: $space-16
+      margin-left: auto
+      margin-right: auto
+      margin-top: $space-49
+
     h1, h2
       align-items: center
       display: flex
@@ -72,6 +79,9 @@
 
     a
       margin-top: $space-24
+
+      &.center
+        text-align: center
 
   .cs-badge-contents-thumbnail
     margin-bottom: $space-49

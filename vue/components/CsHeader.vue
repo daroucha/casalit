@@ -74,6 +74,12 @@
           </div>
         </a>
       </nav>
+
+      <div class="cs-header-search-area">
+        <form action="/products/search" method="post">
+          <input type="search" name="search" placeholder="Pesquisar" autocomplete="search" />
+        </form>
+      </div>
     </div>
   </header>
 </template>
