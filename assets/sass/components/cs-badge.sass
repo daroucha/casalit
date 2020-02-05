@@ -95,15 +95,26 @@
       -webkit-user-drag: none
 
   .cs-badge-contents-table
+    @include type(14px, 400)
+    color: $grey-0y
     display: block
     margin-bottom: $space-97
     margin-top: $space-97
     margin-right: $column-width
-    width: calc(#{$column-width} * 4)
+    width: calc(#{$column-width} * 5)
+
+    h3, h4, h5
+      margin-bottom: $space-8
+
+    p
+      margin-bottom: $space-24
 
     table
       display: block
       width: 100%
+
+      &:not(:last-child)
+        margin-bottom: $space-24
 
       tbody
         display: block
@@ -126,10 +137,10 @@
           direction: rtl
           height: 34px
           line-height: 34px
-          margin-right: $space-24
+          margin-right: $space-16
           position: relative
           text-align: right
-          width: 50%
+          width: 30%
 
           &::after
             background-color: $grey-0c
@@ -147,18 +158,22 @@
           flex-direction: row
           height: 34px
           line-height: 34px
-          margin-left: $space-24
+          margin-left: $space-16
+          overflow: hidden
           position: relative
-          width: 50%
+          text-overflow: ellipsis
+          width: 70%
+          white-space: nowrap
 
           span
             box-sizing: border-box
             display: block
+            padding-right: $space-8
             position: relative
             width: 50%
 
             &:not(:first-child)
-              padding-left: $space-24
+              padding-left: $space-8
 
               &::after
                 background-color: $grey-0c

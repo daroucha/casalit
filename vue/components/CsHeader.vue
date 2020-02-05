@@ -77,7 +77,7 @@
 
       <div class="cs-header-search-area">
         <form action="/products/search" method="post">
-          <input type="search" name="search" placeholder="Pesquisar" autocomplete="search" />
+          <input :style="'background-image: url(' + parseFile(require('../../public/build/images/search@2x.png')) + ');'" type="search" name="search" placeholder="Pesquisar" autocomplete="search" />
         </form>
       </div>
     </div>
@@ -95,6 +95,11 @@ export default {
     useSearch: true,
     slogan: {
       default: "É Casalit? Tá em casa!"
+    }
+  },
+  methods: {
+    parseFile: function(obj) {
+      return obj.default
     }
   }
 }

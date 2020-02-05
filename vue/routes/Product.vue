@@ -16,12 +16,12 @@
             <h1>{{ product.name }}</h1>
 
             <div class="cs-page-text-layout">
-              <p>{{ product.details }}</p>
+              <p v-html="product.details"></p>
 
               <ul class="cs-page-text-links">
                 <li><a href="#" v-scroll-to="'#technical_data'">Ver informações técnicas</a></li>
-                <li><a href="#" v-scroll-to="'#download_a'">Baixar instruções de instalação</a></li>
-                <li><a href="#" v-scroll-to="'#download_b'">Baixar material gráfico</a></li>
+                <li><a href="#" v-scroll-to="'#download_a'" v-if="product_type.title == 'Telhas'">Baixar instruções de instalação</a></li>
+                <li><a href="#" v-scroll-to="'#download_b'" v-if="product_type.folder">Baixar material gráfico</a></li>
               </ul>
             </div>
           </div>
@@ -37,8 +37,8 @@
       <cs-badge id="technical_data">
         <div class="cs-badge-contents">
           <div class="cs-badge-contents-text limited">
-            <p>As telhas fabricadas pela Casalit obedecem às Normas Técnicas Brasileiras, NBR 15210-1 e NBR 15210-2.</p>
-            <p>&nbsp;</p>
+            <p v-if="product_type.title == 'Telhas'">As telhas fabricadas pela Casalit obedecem às Normas Técnicas Brasileiras, NBR 15210-1 e NBR 15210-2.</p>
+            <p v-if="product_type.title == 'Telhas'">&nbsp;</p>
             <p>A garantia de 5 anos das telhas Casalit está condicionada à correta instalação, conforme a Norma Técnica Brasileira, NBR 7196.</p>
           </div>
 
@@ -46,10 +46,10 @@
         </div>
       </cs-badge>
 
-      <cs-badge range="half" index="1" id="download_b">
+      <cs-badge range="half" index="1" id="download_b" v-if="product_type.folder">
         <div class="cs-badge-contents-text">
           <h2>Material gráfico</h2>
-          <p>Baixar folder com informações técnicas sobre as telhas onduladas Casalit.</p>
+          <p>Baixar folder com informações técnicas sobre {{ product.name }} Casalit.</p>
 
           <svg xmlns="http://www.w3.org/2000/svg" width="47.735" height="83" viewBox="0 0 47.735 83">
             <g transform="translate(-3.586 32.094)">
@@ -65,7 +65,7 @@
       <cs-badge range="half" index="7" id="download_a" v-if="product_type.title == 'Telhas'">
         <div class="cs-badge-contents-text">
           <h2>Instruções de instalação</h2>
-          <p>Baixar filipeta de instrução para instalação de telhas onduladas Casalit.</p>
+          <p>Baixar filipeta de instrução para instalação de produtos Casalit.</p>
 
           <svg xmlns="http://www.w3.org/2000/svg" width="47.735" height="83" viewBox="0 0 47.735 83">
             <g transform="translate(-3.586 32.094)">
@@ -74,7 +74,7 @@
             </g>
           </svg>
 
-          <router-link class="center" :to="{name: 'Company'}">Baixar instruções de instalação</router-link>
+          <a class="center" target="new" :href="parseFile(require('../../public/downloads/instrucoes_telhas.pdf'))">Baixar instruções de instalação</a>
         </div>
       </cs-badge>
     </cs-layout>
