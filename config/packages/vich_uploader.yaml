@@ -4,6 +4,7 @@ vich_uploader:
         product_type:
             uri_prefix: '%app.path.product%'
             upload_destination: '%kernel.project_dir%/public%app.path.product%'
+            namer: 'vich_uploader.namer_uniqid'
         
         downloads:
             uri_prefix: '%app.path.downloads%'
