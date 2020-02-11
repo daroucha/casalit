@@ -8,7 +8,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class CompanyController extends AbstractController
 {
     /**
-     * @Route("/company", name="company")
+     * @Route("/company", name="company", options={"sitemap" = {"priority" = 0.7 }})
      */
     public function index()
     {

@@ -6,6 +6,8 @@
 parameters:
     app.path.product: '/products'
     app.path.downloads: '/downloads'
+    router.request_context.host:   casalit.com.br
+    router.request_context.scheme: http
 
 services:
     # default configuration for services in *this* file

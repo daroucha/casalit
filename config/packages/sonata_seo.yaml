@@ -1,0 +1,20 @@
+sonata_seo:
+    encoding: 'UTF-8'
+    page:
+        title: 'Casalit - É Casalit? Tá em casa!'
+        default: 'sonata.seo.page.default'
+        metas:
+            name:
+                keywords: casalit telhas peças complementares cumeeira espigão ondulada fibrocimento obra obras
+                description: É Casalit? Tá em casa!
+                robots: index, follow
+            property:
+                'og:site_name': Casalit
+                'og:description': É Casalit? Tá em casa!
+            http-equiv:
+                'Content-Type': text/html; charset=utf-8
+            charset:
+                UTF-8: ''
+        head:
+            'xmlns': http://www.w3.org/1999/xhtml
+            'xmlns:og': http://opengraphprotocol.org/schema/

@@ -1,0 +1,8 @@
+#config/routes/presta_sitemap.yml
+
+presta_sitemap:
+    resource: "@PrestaSitemapBundle/Resources/config/routing.yml"
+    defaults:
+        priority: 1
+        changefreq: daily
+        lastmod: now

@@ -10,7 +10,7 @@ use Symfony\Component\HttpFoundation\Request;
 class AppController extends AbstractController
 {
     /**
-     * @Route("/products/", name="app_products")
+     * @Route("/products/", name="app_products", options={"sitemap" = {"priority" = 0.7 }})
      */
     public function index()
     {

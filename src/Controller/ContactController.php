@@ -16,7 +16,7 @@ use Symfony\Component\Mime\Email;
 class ContactController extends AbstractController
 {
   /**
-   * @Route("/contact", name="contact")
+   * @Route("/contact", name="contact", options={"sitemap" = {"priority" = 0.7 }})
    */
   public function index(Request $request, MailerInterface $mailer)
   {
