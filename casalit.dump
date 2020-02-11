@@ -1,0 +1,172 @@
+-- MySQL dump 10.13  Distrib 5.7.23, for macos10.13 (x86_64)
+--
+-- Host: 127.0.0.1    Database: casalit
+-- ------------------------------------------------------
+-- Server version	8.0.19
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Table structure for table `contact`
+--
+
+DROP TABLE IF EXISTS `contact`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `contact` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `subject` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `message` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `contact`
+--
+
+LOCK TABLES `contact` WRITE;
+/*!40000 ALTER TABLE `contact` DISABLE KEYS */;
+INSERT INTO `contact` VALUES (1,'Jonathan Doe','jonathan.doe@gmail.com','Mensagem teste','Olá Mundo!');
+/*!40000 ALTER TABLE `contact` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `migration_versions`
+--
+
+DROP TABLE IF EXISTS `migration_versions`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `migration_versions` (
+  `version` varchar(14) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `executed_at` datetime NOT NULL COMMENT '(DC2Type:datetime_immutable)',
+  PRIMARY KEY (`version`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `migration_versions`
+--
+
+LOCK TABLES `migration_versions` WRITE;
+/*!40000 ALTER TABLE `migration_versions` DISABLE KEYS */;
+INSERT INTO `migration_versions` VALUES ('20200124165634','2020-01-24 16:56:43'),('20200127131140','2020-01-27 13:11:48'),('20200127145358','2020-01-27 14:54:05'),('20200127145650','2020-01-27 14:56:54');
+/*!40000 ALTER TABLE `migration_versions` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `product`
+--
+
+DROP TABLE IF EXISTS `product`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `product` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `type_id` int NOT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `description` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `image` longtext COLLATE utf8mb4_unicode_ci,
+  `technical_data` longtext COLLATE utf8mb4_unicode_ci,
+  `details` longtext COLLATE utf8mb4_unicode_ci,
+  `updated_at` datetime DEFAULT NULL,
+  `created_at` datetime NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `IDX_D34A04ADC54C8C93` (`type_id`),
+  CONSTRAINT `FK_D34A04ADC54C8C93` FOREIGN KEY (`type_id`) REFERENCES `product_type` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `product`
+--
+
+LOCK TABLES `product` WRITE;
+/*!40000 ALTER TABLE `product` DISABLE KEYS */;
+INSERT INTO `product` VALUES (1,1,'Telha ondulada de 4mm','Ideais para coberturas de canteiro de obra, edificações agropecuárias e habitações temporárias.','5e3b0273a774b415437754.png','<table>\r\n  <tr>\r\n    <td>Largura (m)</td>\r\n    <td>0,50</td>\r\n  </tr>\r\n  \r\n  <tr>\r\n    <td>Largura útil (m)</td>\r\n    <td>0,45</td>\r\n  </tr>\r\n  \r\n  <tr>\r\n    <td>Comprimento (m)</td>\r\n    <td>\r\n      <span>1,22</span>\r\n      <span>2,44</span>\r\n    </td>\r\n  </tr>\r\n  \r\n  <tr>\r\n    <td>Peso (kg)</td>\r\n    <td>\r\n      <span>4,76</span>\r\n      <span>9,50</span>\r\n    </td>\r\n  </tr>\r\n  \r\n  <tr>\r\n    <td>Número de apoios</td>\r\n    <td>\r\n      <span>2</span>\r\n      <span>3</span>\r\n    </td>\r\n  </tr>\r\n  \r\n  <tr>\r\n    <td>Inclinação</td>\r\n    <td>15º (27%) a 77º (400%)</td>\r\n  </tr>\r\n  \r\n  <tr>\r\n    <td>Rocobrimento longitudinal</td>\r\n    <td>20 cm</td>\r\n  </tr>\r\n</table>','As telhas onduladas de fibrocimento com espessura de 4mm são ideais para coberturas de canteiro de obra, edificações agropecuárias e habitações temporárias.','2020-02-05 17:59:15','2020-02-03 15:11:57'),(2,1,'Telha ondulada de 5mm a 8mm','Ideais para coberturas residenciais, industriais e comerciais.','5e3b026c87dc0643499338.png','<table>\r\n  <tr>\r\n    <td>Largura (m)</td>\r\n    <td>\r\n      <span>0,92</span>\r\n      <span>1,10</span>\r\n    </td>\r\n  </tr>\r\n  \r\n  <tr>\r\n    <td>Largura útil (m)</td>\r\n    <td>\r\n      <span>0,87</span>\r\n      <span>1,05</span>\r\n    </td>\r\n  </tr>\r\n  \r\n  <tr>\r\n    <td>Comprimento (m)</td>\r\n    <td>\r\n      <span>2,44</span>\r\n      <span>1,22</span>\r\n      <span>1,53</span>\r\n      <span>1,83</span>\r\n      <span>2,13</span>\r\n      <span>2,44</span>\r\n      <span>3,05</span>\r\n      <span>3,66</span>\r\n    </td>\r\n  </tr>\r\n  \r\n  <tr>\r\n    <td>Peso 5mm (kg)</td>\r\n    <td>\r\n      <span>23,3</span>\r\n      <span>13,9</span>\r\n      <span>17,4</span>\r\n      <span>20,9</span>\r\n      <span>24,3</span>\r\n      <span>27,8</span>\r\n      <span> - </span>\r\n      <span> - </span>\r\n    </td>\r\n  </tr>\r\n\r\n  <tr>\r\n    <td>Peso 6mm (kg)</td>\r\n    <td>\r\n      <span> - </span>\r\n      <span>16,7</span>\r\n      <span>21,0</span>\r\n      <span>25,0</span>\r\n      <span>29,0</span>\r\n      <span>33,4</span>\r\n      <span>41,7</span>\r\n      <span>50,1</span>\r\n    </td>\r\n  </tr>\r\n\r\n  <tr>\r\n    <td>Peso 8mm (kg)</td>\r\n    <td>\r\n      <span> - </span>\r\n      <span>22,2</span>\r\n      <span>27,9</span>\r\n      <span>33,4</span>\r\n      <span>38,8</span>\r\n      <span>44,5</span>\r\n      <span>55,6</span>\r\n      <span>66,7</span>\r\n    </td>\r\n  </tr>\r\n  \r\n  <tr>\r\n    <td>N. de apoios 5/6mm</td>\r\n    <td>\r\n      <span>3</span>\r\n      <span>2</span>\r\n      <span>2</span>\r\n      <span>2</span>\r\n      <span>3</span>\r\n      <span>3</span>\r\n      <span>3</span>\r\n      <span>3</span>\r\n    </td>\r\n  </tr>\r\n\r\n  <tr>\r\n    <td>N. de apoios 8mm</td>\r\n    <td>\r\n      <span> - </span>\r\n      <span>2</span>\r\n      <span>2</span>\r\n      <span>2</span>\r\n      <span>2</span>\r\n      <span>3</span>\r\n      <span>3</span>\r\n      <span>3</span>\r\n    </td>\r\n  </tr>\r\n</table>\r\n\r\n<h4>Telha de 5 a 8mm</h4>\r\n<table>\r\n  <tr>\r\n    <td>Inclinação</td>\r\n    <td>\r\n      <span>10º (18%) a 15ª (27%)</span>\r\n      <span>15º (27%) a 75º (400%)</span>\r\n    </td>\r\n  </tr>\r\n  \r\n  <tr>\r\n    <td>Recobrimento transversal</td>\r\n    <td>1/4 onda</td>\r\n  </tr>\r\n\r\n  <tr>\r\n    <td>Recobrimento logitudinal</td>\r\n    <td>20 cm</td>\r\n  </tr>\r\n</table>\r\n\r\n<h4>Telha de 8mm</h4>\r\n<table>\r\n  <tr>\r\n    <td>Inclinação</td>\r\n    <td>5º (9%) a 10º (18%)</td>\r\n  </tr>\r\n  \r\n  <tr>\r\n    <td>Recobrimento transversal</td>\r\n    <td>1 1/4 onda</td>\r\n  </tr>\r\n\r\n  <tr>\r\n    <td>Recobrimento logitudinal</td>\r\n    <td>25 cm</td>\r\n  </tr>\r\n</table>','As telhas onduladas de fibrocimento com espessura de 5mm a 8mm são ideais para coberturas residenciais, industriais e comerciais.','2020-02-05 17:59:08','2020-02-03 15:22:51'),(3,2,'Cumeeira Normal','Tem a função de cobrir o encontro de duas águas do telhado','5e3b026319079339006230.png','<h4>Aplicação</h4>\r\n<p>Tem a função de cobrir o encontro de duas águas do telhado.</p>\r\n\r\n<h4>Montagem</h4>\r\n<p>O telhado deve ser montado as duas águas simultaneamente mais a cumeeira, para assim garantir que se encaixem. Em inclinações diferentes as pré determinadas, usar a cumeeira com grau imediatamente superior. Para ângulos de telhado superiores a 30º e inferiores a 45º,usar cumeeira articulada.</p>\r\n\r\n<h4>Modelos com aba 300mm</h4>\r\n\r\n<table>\r\n  <tr>\r\n    <td>Graus (º)</td>\r\n    <td>\r\n      <span>15º</span>\r\n      <span>25º</span>\r\n      <span>30º</span>\r\n    </td>\r\n  </tr>\r\n\r\n  <tr>\r\n    <td>%</td>\r\n    <td>\r\n      <span>27</span>\r\n      <span>47</span>\r\n      <span>58</span>\r\n    </td>\r\n  </tr>\r\n\r\n  <tr>\r\n    <td>Distância \"h\" (cm)</td>\r\n    <td>\r\n      <span>7,5</span>\r\n      <span>13</span>\r\n      <span>13,5</span>\r\n    </td>\r\n  </tr>\r\n\r\n  <tr>\r\n    <td>Pesos Nominais (kg)</td>\r\n    <td>\r\n      <span>+/- 8,2</span>\r\n      <span>+/- 8,4</span>\r\n      <span>+/- 8,5</span>\r\n    </td>\r\n  </tr>\r\n</table>','Tem a função de cobrir o encontro de duas águas do telhado.','2020-02-05 17:58:59','2020-02-05 16:25:11'),(4,2,'Cumeira Articulada para Telha de 5 e 6mm','Tem a função de cobrir o encontro de duas águas do telhado, mesmo que as inclinações das águas sejam diferentes.','5e3b02576e691921416093.png','<h4>Aplicação</h4>\r\n<p>Tem a função de cobrir o encontro de duas águas do telhado, mesmo que as inclinações das águas sejam diferentes.</p>\r\n\r\n<h4>Montagem</h4>\r\n<p>Pode ser utilizada para diferentes ângulos de telhado, dentro de um intervalo de 10º a 45º.</p>\r\n\r\n<h4>Modelos com aba 300mm</h4>\r\n\r\n<table>\r\n  <tr>\r\n    <td>Aba inferior</td>\r\n    <td>Peso Nominal de +/- 4,6 kg.</td>\r\n  </tr>\r\n\r\n  <tr>\r\n    <td>Aba superior</td>\r\n    <td>Peso Nominal de +/- 5,0 kg.</td>\r\n  </tr>\r\n</table>','Tem a função de cobrir o encontro de duas águas do telhado, mesmo que as inclinações das águas sejam diferentes.','2020-02-05 17:58:47','2020-02-05 17:40:18'),(5,2,'Cumeira Shed','Possui uma aba plana para arremate com parede. Também é normalmente utilizada nos telhados shed.','5e3b023fec1a4158930715.png','<h4>Aplicação</h4>\r\n<p>Possui uma aba plana para arremate com parede. Também é normalmente utilizada nos telhados shed.</p>\r\n\r\n<h4>Montagem</h4>\r\n<p>São fabricadas de acordo com o sentido de montagem do telhado (direira, esquerda).</p>\r\n\r\n<h4>Modelos com aba 300mm</h4>\r\n\r\n<table>\r\n  <tr>\r\n    <td>75º</td>\r\n    <td>Peso Nominal de +/- 7,0 kg.</td>\r\n  </tr>\r\n\r\n  <tr>\r\n    <td>85º</td>\r\n    <td>Peso Nominal de +/- 7,0 kg.</td>\r\n  </tr>\r\n\r\n  <tr>\r\n    <td>90º</td>\r\n    <td>Peso Nominal de +/- 7,0 kg.</td>\r\n  </tr>\r\n</table>','Possui uma aba plana para arremate com parede. Também é normalmente utilizada nos telhados shed.','2020-02-05 17:58:23','2020-02-05 17:41:27'),(6,2,'Rufo','Utilizado para arremate da telha com a parede, lanternins, etc.','5e3b0239182a8618876111.png','<h4>Aplicação</h4>\r\n<p>Utilizado para arremate da telha com a parede, lanternins, etc.</p>\r\n\r\n<h4>Montagem</h4>\r\n<p>São fabricadas de acordo com o sentido de montagem do telhado (direita, esquerda).</p>\r\n\r\n<h4>Modelo</h4>\r\n<p>Peso Nominal de +/- 4,4 kg.</p>','Utilizado para arremate da telha com a parede, lanternins, etc.','2020-02-05 17:58:17','2020-02-05 17:41:56'),(7,2,'Espigão Universal e Espigão Universal de Início','Utilizado para arremate das telhas na linha de espigão.','5e3b023213e62454852735.png','<h4>Aplicação</h4>\r\n<p>Utilizado para arremate das telhas na linha de espigão.</p>\r\n\r\n<h4>Montagem</h4>\r\n<p>Na extremidade usas-se o espigão universal de início, e o espigão universal para sequência da linha de espigão.</p>\r\n\r\n<h4>Modelos</h4>\r\n\r\n<table>\r\n  <tr>\r\n    <td>Início</td>\r\n    <td>Peso Nominal de +/- 3,0 kg.</td>\r\n  </tr>\r\n\r\n  <tr>\r\n    <td>Sequencial</td>\r\n    <td>Peso Nominal de +/- 6,5 kg.</td>\r\n  </tr>\r\n</table>','Utilizado para arremate das telhas na linha de espigão.','2020-02-05 17:58:10','2020-02-05 17:42:27'),(8,2,'Cumeira Articulada para Telha de 4mm','Tem a função de cobrir o encontro de duas águas do telhado, mesmo que as inclinações das águas sejam diferentes.','5e3b02298ad70033106583.png','<h4>Aplicação</h4>\r\n<p>Tem a função de cobrir o encontro de duas águas do telhado, mesmo que as inclinações das águas sejam diferentes.</p>\r\n\r\n<h4>Montagem</h4>\r\n<p>Pode ser utilizada para diferentes ângulos de telhado, dentro de um intervalo de 15º a 30º.</p>\r\n\r\n<h4>Modelos</h4>\r\n\r\n<table>\r\n  <tr>\r\n    <td>Aba inferior</td>\r\n    <td>Peso Nominal de +/- 1,2 kg.</td>\r\n  </tr>\r\n\r\n  <tr>\r\n    <td>Aba superior</td>\r\n    <td>Peso Nominal de +/- 1,4 kg.</td>\r\n  </tr>\r\n</table>','Tem a função de cobrir o encontro de duas águas do telhado, mesmo que as inclinações das águas sejam diferentes.','2020-02-05 17:58:01','2020-02-05 17:43:02');
+/*!40000 ALTER TABLE `product` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `product_type`
+--
+
+DROP TABLE IF EXISTS `product_type`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `product_type` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `image` longtext COLLATE utf8mb4_unicode_ci,
+  `created_at` datetime NOT NULL,
+  `updated_at` datetime DEFAULT NULL,
+  `description` longtext COLLATE utf8mb4_unicode_ci,
+  `details` longtext COLLATE utf8mb4_unicode_ci,
+  `folder` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `product_type`
+--
+
+LOCK TABLES `product_type` WRITE;
+/*!40000 ALTER TABLE `product_type` DISABLE KEYS */;
+INSERT INTO `product_type` VALUES (1,'Telhas','telhas.png','2020-01-27 14:47:03','2020-02-05 15:02:54','Conheça nossas telhas de fibrocimento.','As telhas de fibrocimento Casalit, fabricadas de acordo com as Normas Técnicas Brasileiras, NBR 15210-1 e 15210-2, são duráveis, resistentes, versáteis e econômicas, proporcionando a cobertura ideal para a sua obra.','folder_telhas.pdf'),(2,'Peças complementares','pecas.png','2020-01-27 18:10:02','2020-02-05 16:28:22','Conheça nossas peças complementares.','Conheça nossas peças complementares para telhas onduladas.','folder_pecas.pdf');
+/*!40000 ALTER TABLE `product_type` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `user`
+--
+
+DROP TABLE IF EXISTS `user`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `user` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `username` varchar(180) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `roles` json NOT NULL,
+  `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `UNIQ_8D93D649F85E0677` (`username`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `user`
+--
+
+LOCK TABLES `user` WRITE;
+/*!40000 ALTER TABLE `user` DISABLE KEYS */;
+INSERT INTO `user` VALUES (5,'daroucha','[]','$2y$13$5GYyD0uyYNHNz87ML6LWtOYe5Kj2JRICsYKR3mBpZwEYoyn3OWF.q');
+/*!40000 ALTER TABLE `user` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Dumping routines for database 'casalit'
+--
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2020-02-11 12:15:20

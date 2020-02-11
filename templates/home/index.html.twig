@@ -7,20 +7,31 @@
 <div class="cs-page-carousel">
   <carousel 
   :scroll-per-page="false" 
-  :navigation-enabled="true" 
+  :navigation-enabled="true"
+  :navigation-next-label="nextLabel"
+  :navigation-prev-label="prevLabel"
   :center-mode="false" 
   :per-page="1" 
   :loop="true" 
-  :autoplay="false"
+  :autoplay="true"
+  :autoplay-timeout="6000"
   pagination-active-color="#FFF"
   pagination-color="rgba(255, 255, 255, 0.54)"
   >
     <slide data-index="0">
-      <div class="cs-carousel-content" style="background-image: url('{{ asset('build/banner/banner-slogan-1.png') }}')"></div>
+      <div class="cs-carousel-content" style="background-image: url('{{ asset('build/banner/banner_slogan@3x.png') }}')"></div>
     </slide>
 
-    <slide>
-      <div class="cs-carousel-content" style="background-image: url('{{ asset('build/banner/banner-pecas-complementares-2.png') }}')"></div>
+    <slide data-index="1">
+      <a href="{{ path('app_products') }}" class="cs-carousel-content" style="background-image: url('{{ asset('build/banner/banner_pecas@3x.png') }}')"></a>
+    </slide>
+
+    <slide data-index="2">
+      <div class="cs-carousel-content" style="background-image: url('{{ asset('build/banner/banner_garantia@3x.png') }}')"></div>
+    </slide>
+
+    <slide data-index="3">
+      <div class="cs-carousel-content" style="background-image: url('{{ asset('build/banner/banner_orientacao@3x.png') }}')"></div>
     </slide>
   </carousel>
 </div>

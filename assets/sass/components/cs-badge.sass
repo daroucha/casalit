@@ -56,10 +56,12 @@
 
     > svg
       display: block
+      fill: $grey-0y
       margin-bottom: $space-16
       margin-left: auto
       margin-right: auto
       margin-top: $space-49
+      max-height: 80px
 
     h1, h2
       align-items: center
@@ -82,6 +84,14 @@
 
       &.center
         text-align: center
+
+  &.half
+    .cs-badge-contents-thumbnail
+      margin-left: $column-width
+
+      > img
+        max-width: 100%
+        width: 100%
 
   .cs-badge-contents-thumbnail
     margin-bottom: $space-49

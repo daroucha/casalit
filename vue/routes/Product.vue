@@ -51,12 +51,14 @@
           <h2>Material gráfico</h2>
           <p>Baixar folder com informações técnicas sobre {{ product.name }} Casalit.</p>
 
-          <svg xmlns="http://www.w3.org/2000/svg" width="47.735" height="83" viewBox="0 0 47.735 83">
+          <!-- <svg xmlns="http://www.w3.org/2000/svg" width="47.735" height="83" viewBox="0 0 47.735 83">
             <g transform="translate(-3.586 32.094)">
               <line y2="81" transform="translate(27 -31.094)" stroke-width="2" stroke="rgba(0,0,0,0.54)" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
               <path d="M49.906,12,27.453,34.453,5,12" transform="translate(0 15.453)" fill="none" stroke="rgba(0,0,0,0.54)" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
             </g>
-          </svg>
+          </svg> -->
+
+          <svg xmlns="http://www.w3.org/2000/svg" version="1.0" viewBox="0 0 48 48"><path d="M24 37.1L13 24 35 24zM20 4H28V8H20zM20 10H28V14H20z"></path><path d="M20 16H28V27H20zM6 40H42V44H6z"></path></svg>
 
           <a class="center" target="new" :href="parseFile(require('../../public/downloads/' + product_type.folder))">Baixar material gráfico</a>
         </div>
@@ -67,12 +69,14 @@
           <h2>Instruções de instalação</h2>
           <p>Baixar filipeta de instrução para instalação de produtos Casalit.</p>
 
-          <svg xmlns="http://www.w3.org/2000/svg" width="47.735" height="83" viewBox="0 0 47.735 83">
+          <!-- <svg xmlns="http://www.w3.org/2000/svg" width="47.735" height="83" viewBox="0 0 47.735 83">
             <g transform="translate(-3.586 32.094)">
               <line y2="81" transform="translate(27 -31.094)" stroke-width="2" stroke="rgba(0,0,0,0.54)" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
               <path d="M49.906,12,27.453,34.453,5,12" transform="translate(0 15.453)" fill="none" stroke="rgba(0,0,0,0.54)" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
             </g>
-          </svg>
+          </svg> -->
+
+          <svg xmlns="http://www.w3.org/2000/svg" version="1.0" viewBox="0 0 48 48"><path d="M24 37.1L13 24 35 24zM20 4H28V8H20zM20 10H28V14H20z"></path><path d="M20 16H28V27H20zM6 40H42V44H6z"></path></svg>
 
           <a class="center" target="new" :href="parseFile(require('../../public/downloads/instrucoes_telhas.pdf'))">Baixar instruções de instalação</a>
         </div>

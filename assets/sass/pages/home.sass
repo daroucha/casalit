@@ -5,9 +5,10 @@
     align-items: center
     display: flex
     flex-direction: row
-    height: 68vh
+    // height: calc(100vh - 133px)
+    height: 34.9194729136164vw
     justify-content: center
-    min-height: 500px
+    transition: linear 80ms height
     width: 100%
 
     .VueCarousel
@@ -36,6 +37,8 @@
           background-color: rgba($white, 0.60)
           border-radius: 100%
           box-sizing: content-box
+          box-shadow: 0 4px 6px rgba($black, 0.10)
+          color: transparent
           display: flex
           height: 12px
           justify-content: center
@@ -43,6 +46,24 @@
           text-align: center
           transform: translateY(0px)
           width: 12px
+
+          > img
+            display: block
+            height: 14px
+            width: auto
+
+          &.VueCarousel-navigation-prev > img
+            transform: translateX(-1px)
+
+          &.VueCarousel-navigation-next > img
+            transform: translateX(2px)
+
+          &:hover
+            background-color: rgba($white, 0.80)
+            box-shadow: inset 0 0 0 1px rgba($white, 0.32), 0 4px 6px rgba($black, 0.10)
+
+          &:active
+            background-color: $white
 
       .VueCarousel-pagination
         bottom: 0px
@@ -64,6 +85,7 @@
         display: block
         height: auto
         min-height: 100%
+        transition: linear 80ms height
         width: 100%
 
   > .cs-component-layout
