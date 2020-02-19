@@ -114,7 +114,7 @@ export default {
   methods: {
     retrieveType: function(url) {
       axios
-        .get('http://localhost:8000' + url)
+        .get('http://191.252.204.40' + url)
         .then(response => {
           this.product_type = response.data
         })
@@ -125,7 +125,7 @@ export default {
   },
   mounted() {
     axios
-      .get('http://localhost:8000/api/products/' + this.id)
+      .get('http://191.252.204.40/api/products/' + this.id)
       .then(response => {
         this.product = response.data
         this.retrieveType(this.product['type'])

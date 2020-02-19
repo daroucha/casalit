@@ -89,7 +89,7 @@ export default {
 
       for (let index = 0; index < url.length; index++) {
         axios
-          .get('http://localhost:8000' + url[index])
+          .get('http://191.252.204.40' + url[index])
           .then(response => {
             this.products_object.push(response.data)
           })
@@ -101,7 +101,7 @@ export default {
   },
   mounted() {
     axios
-      .get('http://localhost:8000/api/product_types/' + this.id)
+      .get('http://191.252.204.40/api/product_types/' + this.id)
       .then(response => {
         this.product_type = response.data
         this.retrieveProducts(this.product_type['products'])
