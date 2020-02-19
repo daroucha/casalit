@@ -194,7 +194,7 @@
 
       <div class="cs-header-search-area">
         <form action="/products/search" method="post">
-          <input :style="'background-image: url(' + parseFile(require('../../public/build/images/search@2x.png')) + ');'" type="search" name="search" placeholder="Pesquisar" autocomplete="search" />
+          <input :style="'background-image: url(' + parseFile(require('../../assets/images/search@2x.png')) + ');'" type="search" name="search" placeholder="Pesquisar" autocomplete="search" />
         </form>
       </div>
     </div>
