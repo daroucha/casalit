@@ -67,6 +67,9 @@
   padding-top: 133px
   width: 100%
 
+  @media (max-width: 900px)
+    padding-top: $mobile-height
+
   a
     @include type(14px, 600)
     color: $red-0y
@@ -127,3 +130,12 @@
 
     .cs-bc-path
       color: $grey-0y
+
+    // Mobile
+    @media (max-width: 900px)
+      max-width: 100%
+      
+      li
+        overflow: hidden
+        text-overflow: ellipsis
+        white-space: nowrap

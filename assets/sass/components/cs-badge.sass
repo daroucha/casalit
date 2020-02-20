@@ -249,3 +249,53 @@
       textarea
         resize: none
         height: 120px
+
+// Mobile
+@media (max-width: 900px)
+  .cs-component-badge
+    display: flex
+    flex-direction: column
+    margin-bottom: $space-m
+
+    .cs-badge-contents-table
+      margin: 0px
+      margin-bottom: $space-24
+      margin-top: 0px
+      width: 100%
+
+      p, h4
+        margin-left: $space-32
+        margin-right: $space-32
+        width: calc(100% - calc(#{$space-32} * 2))
+
+        &:not(:first-child)
+          margin: $space-32
+
+    .cs-badge-contents-form
+      .message
+        flex-direction: column
+        justify-content: center
+
+        div:not(:last-child)
+          margin-bottom: $space-24
+
+    .cs-badge-contents
+      flex-direction: column
+
+    .cs-badge-contents-text
+      display: block
+      margin: $space-32
+      width: calc(100% - calc(#{$space-32} * 2))
+
+    .cs-badge-contents-center
+      margin-bottom: $space-32 !important
+      margin-top: $space-32 !important
+
+    .cs-badge-contents-thumbnail
+      margin: 0px
+      margin-bottom: $space-32 !important
+      margin-left: $space-32 !important
+      margin-right: $space-32 !important
+
+      img
+        max-width: 50%

@@ -57,3 +57,24 @@
       .cs-page-text-thumbnail
         > img
           width: calc(#{$column-width} * 4)
+
+// Mobile
+@media (max-width: 900px)
+  .cs-page-products 
+    > .cs-page-product-type.cs-page-company 
+      .cs-page-text-container
+        padding: $space-24
+        width: calc(100% - calc(#{$space-24} * 2))
+
+        .cs-page-text-thumbnail
+          margin: 0px
+
+          > img
+            width: 100%
+
+        .cs-page-text-layout
+          margin: 0px
+          margin-bottom: $space-24
+
+        .cs-page-inline-container
+          flex-direction: column

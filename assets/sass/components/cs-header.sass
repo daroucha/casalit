@@ -143,3 +143,51 @@
         &:focus
           box-shadow: 0 0 0 2px $blue-0x
           color: $grey-0t
+
+// Mobile
+@media (max-width: 900px)
+  .cs-component-header
+      height: $mobile-height
+
+      .cs-header-navigation-wrapper
+        flex-direction: column
+
+        .cs-header-brand-area
+          align-items: center
+          height: 80px
+          width: 100vw
+
+          > svg 
+            width: 120px
+
+        .cs-header-navigation-area
+          height: 40px
+
+          .cs-header-nav-link
+            padding: 0px
+
+          .cs-header-nav-route-title
+            display: none
+
+          .cs-header-nav-link
+            .cs-header-nav-link-contents
+              padding-left: $space-16
+              padding-right: $space-16
+
+              .cs-header-nav-route-symbol
+                display: block
+                height: 22px
+                margin: 0px
+                width: 22px
+
+        .cs-header-search-area
+          box-shadow: 0 -1px 0 0 $grey-0c
+          height: 32px
+          margin: 0px
+          width: 100vw
+
+          input[type='search']
+            box-shadow: none
+
+            &:focus
+              box-shadow: inset 0 0 0 2px $blue-0x
