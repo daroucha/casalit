@@ -73,7 +73,7 @@ export default {
   },
   mounted() {
     axios
-      .get('http://191.252.204.40/api/product_types')
+      .get('http://casalit.com.br/api/product_types')
       .then(response => {
         this.product_types = response.data
         this.loader = false

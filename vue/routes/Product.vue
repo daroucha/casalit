@@ -114,7 +114,7 @@ export default {
   methods: {
     retrieveType: function(url) {
       axios
-        .get('http://191.252.204.40' + url)
+        .get('http://casalit.com.br' + url)
         .then(response => {
           this.product_type = response.data
         })
@@ -125,7 +125,7 @@ export default {
   },
   mounted() {
     axios
-      .get('http://191.252.204.40/api/products/' + this.id)
+      .get('http://casalit.com.br/api/products/' + this.id)
       .then(response => {
         this.product = response.data
         this.retrieveType(this.product['type'])
