@@ -15,6 +15,8 @@ sonata_seo:
                 'Content-Type': text/html; charset=utf-8
             charset:
                 UTF-8: ''
+            viewport:
+                'width=device-width, initial-scale=1.0'
         head:
             'xmlns': http://www.w3.org/1999/xhtml
             'xmlns:og': http://opengraphprotocol.org/schema/
