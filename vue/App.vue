@@ -43,6 +43,15 @@ export default {
       this.transitionName = transitionName || DEFAULT_TRANSITION;
       next();
     })
+  },
+  mounted () {
+    window.onscroll = function() {
+      if (window.pageYOffset > 76) {
+        $('#casalit').addClass('minimized')
+      } else {
+        $('#casalit').removeClass('minimized')
+      }
+    }
   }
 }
 </script>

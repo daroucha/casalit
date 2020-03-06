@@ -257,19 +257,24 @@
     flex-direction: column
     margin-bottom: $space-m
 
-    .cs-badge-contents-table
-      margin: 0px
-      margin-bottom: $space-24
-      margin-top: 0px
+    .cs-badge-table-container
+      display: block
+      overflow-x: scroll
       width: 100%
 
-      p, h4
-        margin-left: $space-32
-        margin-right: $space-32
-        width: calc(100% - calc(#{$space-32} * 2))
+      .cs-badge-contents-table
+        margin: 0px
+        margin-bottom: $space-24
+        margin-top: 0px
+        width: 200%
 
-        &:not(:first-child)
-          margin: $space-32
+        p, h4
+          margin-left: $space-32
+          margin-right: $space-32
+          width: calc(100% - calc(#{$space-32} * 2))
+
+          &:not(:first-child)
+            margin: $space-32
 
     .cs-badge-contents-form
       .message

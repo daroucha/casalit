@@ -42,7 +42,9 @@
             <p>A garantia de 5 anos das telhas Casalit está condicionada à correta instalação, conforme a Norma Técnica Brasileira, NBR 7196.</p>
           </div>
 
-          <div class="cs-badge-contents-table" v-html="product.technicalData" />
+          <div class="cs-badge-table-container">
+            <div class="cs-badge-contents-table" v-html="product.technicalData" />
+          </div>
         </div>
       </cs-badge>
 
