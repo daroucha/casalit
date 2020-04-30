@@ -11,7 +11,9 @@ use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Mailer\MailerInterface;
+use Symfony\Bridge\Twig\Mime\TemplatedEmail;
 use Symfony\Component\Mime\Email;
+use Symfony\Component\Mime\Address;
 
 class ContactController extends AbstractController
 {
@@ -48,12 +50,20 @@ class ContactController extends AbstractController
       $entityManager->persist($task);
       $entityManager->flush();
 
-      $email = (new Email())
-      ->from($task->getEmail())
-      ->to('daniel.aroucha97@gmail.com')
-      ->priority(Email::PRIORITY_HIGH)
-      ->subject($task->getSubject())
-      ->text($task->getMessage());
+      $email = (new TemplatedEmail())
+        ->from(new Address('jessica@casalit.com.br', 'Site da Casalit - '.$task->getName()))
+        ->to('jessica@casalit.com')
+        ->priority(Email::PRIORITY_HIGH)
+        ->subject($task->getSubject())
+        ->htmlTemplate('contact/email.html.twig')
+        ->context([
+            'message' => $task->getMessage(),
+            'name' => $task->getName(),
+            'subject' => $task->getSubject(),
+            'emailAddress' => $task->getEmail()
+        ]);
+
+      $mailer->send($email);
 
       $this->addFlash(
         'notice',
