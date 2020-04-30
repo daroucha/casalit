@@ -10,17 +10,17 @@ use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\HttpFoundation\Request;
-/*use Symfony\Component\Mailer\MailerInterface;
+use Symfony\Component\Mailer\MailerInterface;
 use Symfony\Bridge\Twig\Mime\TemplatedEmail;
 use Symfony\Component\Mime\Email;
-use Symfony\Component\Mime\Address;*/
+use Symfony\Component\Mime\Address;
 
 class ContactController extends AbstractController
 {
   /**
    * @Route("/contact", name="contact", options={"sitemap" = {"priority" = 0.7 }})
    */
-  public function index(Request $request /*, MailerInterface $mailer*/)
+  public function index(Request $request , MailerInterface $mailer)
   {
     $contact = new Contact();
 
@@ -50,7 +50,6 @@ class ContactController extends AbstractController
       $entityManager->persist($contact);
       $entityManager->flush();
 
-      /*
       $email = (new TemplatedEmail())
         ->from(new Address('jessica@casalit.com.br', 'Site da Casalit - '.$contact->getName()))
         ->to('jessica@casalit.com')
@@ -65,7 +64,6 @@ class ContactController extends AbstractController
         ]);
 
       $mailer->send($email);
-      */
 
       $this->addFlash(
         'notice',
