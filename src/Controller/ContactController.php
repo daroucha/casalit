@@ -10,9 +10,6 @@ use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\Mailer\MailerInterface;
-use Symfony\Bridge\Twig\Mime\TemplatedEmail;
-use Symfony\Component\Mime\Email;
 use Symfony\Component\Mime\Address;
 
 class ContactController extends AbstractController
@@ -20,7 +17,7 @@ class ContactController extends AbstractController
   /**
    * @Route("/contact", name="contact", options={"sitemap" = {"priority" = 0.7 }})
    */
-  public function index(Request $request , MailerInterface $mailer)
+  public function index(Request $request)
   {
     $contact = new Contact();
 
@@ -50,20 +47,29 @@ class ContactController extends AbstractController
       $entityManager->persist($contact);
       $entityManager->flush();
 
-      $email = (new TemplatedEmail())
-        ->from(new Address('jessica@casalit.com.br', 'Site da Casalit - '.$contact->getName()))
-        ->to('jessica@casalit.com')
-        ->priority(Email::PRIORITY_HIGH)
-        ->subject($contact->getSubject())
-        ->htmlTemplate('contact/email.html.twig')
-        ->context([
+      $body = $this->get('twig')->render(
+          'contact/email.html.twig',
+          [
             'message' => $contact->getMessage(),
             'name' => $contact->getName(),
             'subject' => $contact->getSubject(),
             'emailAddress' => $contact->getEmail()
-        ]);
+          ]
+      );
 
-      $mailer->send($email);
+      $message = (new \Swift_Message($contact->getSubject()))
+          ->setFrom(new Address('jessica@casalit.com.br', 'Site da Casalit - '.$contact->getName()))
+          ->setTo('jessica@casalit.com')
+          ->setBody($body, 'text/html')
+      ;
+
+      $transport = (new \Swift_SmtpTransport('smtp.skymail.net.br', 465, 'ssl'))
+      ->setUsername('jessica@casalit.com.br')
+      ->setPassword('J25m03L91@22')
+      ;
+
+      $mailer = new \Swift_Mailer($transport);
+      $mailer->send($message);
 
       $this->addFlash(
         'notice',
