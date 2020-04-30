@@ -44,24 +44,24 @@ class ContactController extends AbstractController
 
     $form->handleRequest($request);
     if ($form->isSubmitted() && $form->isValid()) {
-      $task = $form->getData();
+      $contact = $form->getData();
 
       $entityManager = $this->getDoctrine()->getManager();
-      $entityManager->persist($task);
+      $entityManager->persist($contact);
       $entityManager->flush();
 
       /*
       $email = (new TemplatedEmail())
-        ->from(new Address('jessica@casalit.com.br', 'Site da Casalit - '.$task->getName()))
+        ->from(new Address('jessica@casalit.com.br', 'Site da Casalit - '.$contact->getName()))
         ->to('jessica@casalit.com')
         ->priority(Email::PRIORITY_HIGH)
-        ->subject($task->getSubject())
+        ->subject($contact->getSubject())
         ->htmlTemplate('contact/email.html.twig')
         ->context([
-            'message' => $task->getMessage(),
-            'name' => $task->getName(),
-            'subject' => $task->getSubject(),
-            'emailAddress' => $task->getEmail()
+            'message' => $contact->getMessage(),
+            'name' => $contact->getName(),
+            'subject' => $contact->getSubject(),
+            'emailAddress' => $contact->getEmail()
         ]);
 
       $mailer->send($email);
