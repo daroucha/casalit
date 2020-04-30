@@ -50,6 +50,7 @@ class ContactController extends AbstractController
       $entityManager->persist($task);
       $entityManager->flush();
 
+      /*
       $email = (new TemplatedEmail())
         ->from(new Address('jessica@casalit.com.br', 'Site da Casalit - '.$task->getName()))
         ->to('jessica@casalit.com')
@@ -64,6 +65,7 @@ class ContactController extends AbstractController
         ]);
 
       $mailer->send($email);
+      */
 
       $this->addFlash(
         'notice',
