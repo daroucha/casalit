@@ -58,8 +58,8 @@ class ContactController extends AbstractController
       );
 
       $message = (new \Swift_Message($contact->getSubject()))
-          ->setFrom(new Address('jessica@casalit.com.br', 'Site da Casalit - '.$contact->getName()))
-          ->setTo('jessica@casalit.com')
+          ->setFrom('jessica@casalit.com.br')
+          ->setTo('jessica@casalit.com.br')
           ->setBody($body, 'text/html')
       ;
 
